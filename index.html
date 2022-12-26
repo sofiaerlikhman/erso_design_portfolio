@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERSO-Design</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('yXMaAOYXFXUyo_9ZN');
+      })();
+    </script>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <a class="header__logo" href="/">
+          <img class="header__logo_icon" src="./images/icons/logo.svg" alt="" />
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a class="nav-list__link" href="#about-me">About</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link" href="#skills">Skills</a>
+            </li>
+          </ul>
+        </nav>
+        <button data-modal-open-header class="header__btn">Order design</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="container hero">
+          <div class="hero-wrap">
+            <h1 class="hero__label">Make your brand desirable</h1>
+
+            <p class="hero__text_introduce">
+              Hi, I`m Sofia Erlikhman, aka erso Graphic and UI/UX designer
+            </p>
+            <p class="hero__text_main-message">I will help your ideas become a reality.</p>
+            <div class="hero-btn-wrap">
+              <p class="hero-btn-wrap__text">Still thinking?</p>
+              <button data-modal-open-hero class="hero-btn-wrap__btn">Order design</button>
+            </div>
+          </div>
+        </div>
+        <picture>
+          <source
+            srcset="./images/hero/hero-desktop.png 1x, ./images/hero/hero-desktop@2x.png 2x"
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="./images/hero/hero-tablet.png 1x, ./images/hero/hero-tablet@2x.png 2x"
+            media="(min-width: 510px)"
+          />
+          <img
+            class="hero-section__picture"
+            srcset="./images/hero/hero.png 1x, ./images/hero/hero@2x.png 2x"
+            src="./images/hero/hero.png"
+            alt="My photo"
+          />
+        </picture>
+      </section>
+      <section>
+        <div class="container advantages">
+          <ul class="advantages-list">
+            <li class="advantages-list__item">
+              <div class="advantages-list__wrapper">
+                <h2 class="advantages-list__label">Quality</h2>
+              </div>
+              <p class="advantages-list__text">
+                I find quality the most important aspect of the work. My goal is to help you add
+                value to your business by providing the optimal design solution. I guarantee you a
+                personal approach and understanding of your needs.
+              </p>
+            </li>
+            <li class="advantages-list__item">
+              <div class="advantages-list__wrapper">
+                <h2 class="advantages-list__label">Support</h2>
+              </div>
+              <p class="advantages-list__text">
+                Working hand-in-hand with you requires constant contact to achieve the best result.
+                I am eager to provide you support at every stage of product development.
+                Communication is critical to our long-term relationship.
+              </p>
+            </li>
+            <li class="advantages-list__item">
+              <div class="advantages-list__wrapper">
+                <h2 class="advantages-list__label">Ethics</h2>
+              </div>
+              <p class="advantages-list__text">
+                Nowadays, designers have influence. That`s why it is so important to stay ethical
+                and take responsibility for a certain design choice. Not only think I about terms of
+                use but about how my design may affect others.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="about-me" class="about-me-section">
+        <div class="container about-me">
+          <div class="about-me-info-wrap">
+            <h2 class="about-me__label">About me</h2>
+            <picture>
+              <source
+                srcset="
+                  ./images/about-me/about-me-desktop.png    1x,
+                  ./images/about-me/about-me-desktop@2x.png 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <img
+                class="about-me__pic"
+                srcset="./images/about-me/about-me.png 1x, ./images/about-me/about-me@2x.png 2x"
+                src="./images/about-me/about-me.png"
+                alt="My photo"
+              />
+            </picture>
+            <div>
+              <h2 class="about-me__label--desktop">About me</h2>
+              <p class="about-me__text">
+                I have been studying graphic design at the Kharkiv State Academy of Design and Fine
+                Arts since 2019. For one semester, I have been studying abroad at Hochschule
+                RheinMain. Additionally, I am studying computer science to provide a better design
+                solution for the website. You may consider me a “forever student” and maybe you are
+                right. But I am eager to put all my knowledge to use in your future project. Reach
+                out to me to connect!
+              </p>
+            </div>
+          </div>
+
+          <div class="about-me-links-wrap">
+            <ul class="about-me-links-list">
+              <li class="about-me-links-list__item">
+                <a class="about-me-links-list__link" href="tel:+491712147996" target="_blank"
+                  ><img
+                    class="about-me-links-list__icon"
+                    src="./images/icons/tel.svg"
+                    alt="phone icon"
+                  />
+                  <span class="about-me-links-list__text">+491712147996</span></a
+                >
+              </li>
+              <li class="about-me-links-list__item">
+                <a
+                  class="about-me-links-list__link"
+                  href="https://www.instagram.com/erso.exe/"
+                  target="_blank"
+                  ><img
+                    class="about-me-links-list__icon"
+                    src="./images/icons/insta.svg"
+                    alt="instagram icon"
+                  />
+                  <span class="about-me-links-list__text">@erso.exe</span></a
+                >
+              </li>
+              <li class="about-me-links-list__item">
+                <a class="about-me-links-list__link" href="https://www.behance.net/" target="_blank"
+                  ><img
+                    class="about-me-links-list__icon"
+                    src="./images/icons/behance.svg"
+                    alt="behance icon"
+                  />
+                  <span class="about-me-links-list__text">behance.net</span></a
+                >
+              </li>
+              <li class="about-me-links-list__item">
+                <a
+                  class="about-me-links-list__link"
+                  href="mailto:sofiaerlikhman@gmail.com"
+                  target="_blank"
+                  ><img
+                    class="about-me-links-list__icon"
+                    src="./images/icons/gmail.svg"
+                    alt="gmail icon"
+                  />
+                  <span class="about-me-links-list__text">sofiaerlikhman@gmail.com</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio">
+        <div class="container portfolio">
+          <h2 class="portfolio__label">Portfolio</h2>
+          <div class="portfolio-list-wrap">
+            <ul class="portfolio-list">
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-1-desktop.png    1x,
+                      ./images/portfolio/project-1-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-1.png    1x,
+                      ./images/portfolio/project-1@2x.png 2x
+                    "
+                    src="./images/portfolio/project-1.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-2-desktop.png    1x,
+                      ./images/portfolio/project-2-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-2.png    1x,
+                      ./images/portfolio/project-2@2x.png 2x
+                    "
+                    src="./images/portfolio/project-2.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-3-desktop.png    1x,
+                      ./images/portfolio/project-3-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-3.png    1x,
+                      ./images/portfolio/project-3@2x.png 2x
+                    "
+                    src="./images/portfolio/project-3.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-4-desktop.png    1x,
+                      ./images/portfolio/project-4-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-4.png    1x,
+                      ./images/portfolio/project-4@2x.png 2x
+                    "
+                    src="./images/portfolio/project-4.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-5-desktop.png    1x,
+                      ./images/portfolio/project-5-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-5.png    1x,
+                      ./images/portfolio/project-5@2x.png 2x
+                    "
+                    src="./images/portfolio/project-5.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-6-desktop.png    1x,
+                      ./images/portfolio/project-6-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-6.png    1x,
+                      ./images/portfolio/project-6@2x.png 2x
+                    "
+                    src="./images/portfolio/project-6.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-7-desktop.png    1x,
+                      ./images/portfolio/project-7-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-7.png    1x,
+                      ./images/portfolio/project-7@2x.png 2x
+                    "
+                    src="./images/portfolio/project-7.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-8-desktop.png    1x,
+                      ./images/portfolio/project-8-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-8.png    1x,
+                      ./images/portfolio/project-8@2x.png 2x
+                    "
+                    src="./images/portfolio/project-8.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+              <li class="portfolio-list__item">
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/project-9-desktop.png    1x,
+                      ./images/portfolio/project-9-desktop@2x.png 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="portfolio-list__pic"
+                    srcset="
+                      ./images/portfolio/project-9.png    1x,
+                      ./images/portfolio/project-9@2x.png 2x
+                    "
+                    src="./images/portfolio/project-9.png"
+                    alt="project image"
+                  />
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="skills-wrap container" id="skills">
+        <section>
+          <div class="hard-skills">
+            <h2 class="hard-skills__label">Hard skills</h2>
+            <div class="mobile-position">
+              <ul class="hard-skills-list">
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/Ai.png"
+                    alt="adobe illustrator icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/Id.png"
+                    alt="adobe indesign icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/Ps.png"
+                    alt="adobe photoshop icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/html.png"
+                    alt="html icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/figma.png"
+                    alt="figma icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/css.png"
+                    alt="css icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/Ae.png"
+                    alt="adobe after effect icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/fontlab.png"
+                    alt="fontlab icon"
+                  />
+                </li>
+                <li class="hard-skills-list__item">
+                  <img
+                    class="hard-skills-list__icon"
+                    src="./images/skills/Pr.png"
+                    alt="adobe premiere icon"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="languages">
+            <h2 class="languages__label">Languages</h2>
+            <div class="languages-wrap">
+              <div class="languages-decor">
+                <ul class="languages-list">
+                  <li class="languages-list__item"><span>Ukrainian - native</span></li>
+                  <li class="languages-list__item"><span>Russian - native</span></li>
+                  <li class="languages-list__item"><span>English - C1</span></li>
+                  <li class="languages-list__item"><span>French - B2</span></li>
+                  <li class="languages-list__item"><span>German - B1</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="soft-skills">
+            <h2 class="soft-skills__label">Soft skills</h2>
+            <div class="soft-skills-wrap">
+              <ul class="soft-skills-list">
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Communication</span>
+                    <span class="field-info__percentage">71%</span>
+                  </div>
+                </li>
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Time manegment</span>
+                    <span class="field-info__percentage">76%</span>
+                  </div>
+                </li>
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Problem solving</span>
+                    <span class="field-info__percentage">93%</span>
+                  </div>
+                </li>
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Adaptability</span>
+                    <span class="field-info__percentage">82%</span>
+                  </div>
+                </li>
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Teamwork</span>
+                    <span class="field-info__percentage">67%</span>
+                  </div>
+                </li>
+                <li class="soft-skills-list__item">
+                  <div class="field-info">
+                    <span class="field-info__type">Emotional intelligence</span>
+                    <span class="field-info__percentage">89%</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer-section">
+      <div class="footer">
+        <div class="footer-nav">
+          <a class="footer-nav__logo" href="/">
+            <img class="footer-nav__logo_icon" src="./images/icons/logo-footer.svg" alt="" />
+          </a>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-list__item">
+              <a class="footer-nav-list__link" href="#about-me">About</a>
+            </li>
+            <li class="footer-nav-list__item">
+              <a class="footer-nav-list__link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="footer-nav-list__item">
+              <a class="footer-nav-list__link" href="#skills">Skills</a>
+            </li>
+          </ul>
+          <button data-modal-open-footer class="footer-nav__btn">Order design</button>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-socials__privacy">&copy; Erlikhman Sofia 2022</p>
+
+          <div class="social-links-wrap">
+            <span class="social-links-wrap__label">Contacts:</span>
+            <ul class="social-links-list">
+              <li class="social-links-list__item">
+                <a class="social-links-list__link" href="tel:+491712147996" target="_blank">
+                  <img
+                    class="social-links-list__icon"
+                    src="./images/icons/tel.svg"
+                    alt="phone icon"
+                  />
+                </a>
+              </li>
+              <li class="social-links-list__item">
+                <a
+                  class="social-links-list__link"
+                  href="https://www.instagram.com/erso.exe/"
+                  target="_blank"
+                >
+                  <img
+                    class="social-links-list__icon"
+                    src="./images/icons/insta.svg"
+                    alt="instagram icon"
+                  />
+                </a>
+              </li>
+              <li class="social-links-list__item">
+                <a class="social-links-list__link" href="https://www.behance.net/" target="_blank">
+                  <img
+                    class="social-links-list__icon"
+                    src="./images/icons/behance.svg"
+                    alt="behance icon"
+                  />
+                </a>
+              </li>
+              <li class="social-links-list__item">
+                <a
+                  class="social-links-list__link"
+                  href="mailto:sofiaerlikhman@gmail.com"
+                  target="_blank"
+                >
+                  <img
+                    class="social-links-list__icon"
+                    src="./images/icons/gmail.svg"
+                    alt="gmail icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn-close" data-modal-close>
+          <img
+            class="modal-btn-close__icon"
+            src="./images/icons/close-btn-icon.svg"
+            alt="close button icon"
+          />
+        </button>
+        <h2 id="form-label" class="modal__label">Order design</h2>
+        <form class="modal-form" id="my-form">
+          <div class="field">
+            <label class="field__label" for="name"> Enter your name </label>
+            <input class="field__input" type="text" id="name" required autocomplete="off" />
+          </div>
+          <div class="field">
+            <label class="field__label" for="email"> Enter your e-mail </label>
+            <input class="field__input" type="email" id="email" required />
+          </div>
+          <div class="field">
+            <label class="field__label" for="message"> Briefly describe what you need </label>
+            <textarea
+              class="field__textarea"
+              type="text"
+              name="message"
+              id="message"
+              rows="3"
+              cols="30"
+            ></textarea>
+          </div>
+          <button type="submit" class="modal-form__btn">Send</button>
+        </form>
+        <div class="modal-form-message" id="modal-form-status">
+          The first step towards your design is done. I`ll reach out to you as soon as possible.
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+
+    <script src="./js/form.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/modal.js"></script>
+  </body>
+</html>
