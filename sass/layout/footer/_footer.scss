@@ -1,0 +1,121 @@
+.footer {
+  color: var(--text-color);
+  background-color: var(--bg-black-color);
+  padding: 40px 15px;
+
+  @media screen and (min-width: 1200px) {
+    padding: 40px calc(15px + (200 - 15) * ((100vw - 1200px) / (1920 - 1200)));
+  }
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.footer-nav__logo {
+  &_icon {
+    @extend %logo;
+  }
+}
+
+.footer-nav-list {
+  display: flex;
+  gap: 15px;
+
+  @media screen and (min-width: 768px) {
+    gap: 45px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 80px;
+  }
+}
+
+.footer-nav-list__link {
+  color: var(--text-color);
+  @extend %nav-links;
+}
+
+.footer-nav__btn {
+  @extend %btn;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+
+  &__privacy {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 2.4;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1200px) {
+    }
+  }
+}
+
+.social-links-wrap {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-right: 20px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 2.4;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    @media screen and (min-width: 1200px) {
+      line-height: 1.5;
+    }
+  }
+}
+
+.social-links-list {
+  display: flex;
+  gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    gap: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    gap: 25px;
+  }
+}
+
+.social-links-list__item {
+  transition: transform var(--time-of-animation) var(--timing-function);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+
+.social-links-list__icon {
+  width: 21px;
+  height: 21px;
+
+  @media screen and (min-width: 768px) {
+    width: 31px;
+    height: 31px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 40px;
+    height: 40px;
+  }
+}

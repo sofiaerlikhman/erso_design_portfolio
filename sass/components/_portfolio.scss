@@ -1,0 +1,107 @@
+.portfolio {
+}
+
+.portfolio__label {
+  @extend %label;
+
+  margin-bottom: 30px;
+}
+
+.portfolio-list-wrap {
+}
+
+.portfolio-list {
+}
+
+.portfolio-list__item {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-list__pic {
+  margin: 0 auto;
+  border-radius: 15px;
+
+  width: calc(256px + (370 - 256) * ((100vw - 320px) / (767 - 320)));
+  height: calc(143px + (205 - 143) * ((100vw - 320px) / (767 - 320)));
+
+  @media screen and (min-width: 768px) {
+    width: calc(480px + (490 - 480) * ((100vw - 768px) / (1199 - 768)));
+    height: calc(300px + (320 - 300) * ((100vw - 768px) / (1199 - 768)));
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc(670px + (730 - 670) * ((100vw - 1200px) / (1920 - 1200)));
+    height: calc(380px + (410 - 380) * ((100vw - 1200px) / (1920 - 1200)));
+  }
+}
+
+/* Слайдер */
+.slick-slider {
+}
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+/* Слайд */
+.slick-slide {
+}
+
+.portfolio-list .slick-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  fill: var(--accent);
+
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Стрелка влево */
+.portfolio-list .slick-arrow.slick-prev {
+  background-color: inherit;
+  border-width: 3px 0px 0px 3px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  transform: rotate(-45deg);
+  @media screen and (max-width: 767px) {
+    left: 7px;
+  }
+  @media screen and (min-width: 768px) {
+    left: 8px;
+  }
+  @media screen and (min-width: 1366px) {
+    left: 14px;
+  }
+}
+/* Стрелка вправо */
+.portfolio-list .slick-arrow.slick-next {
+  background-color: inherit;
+  border-width: 0px 3px 3px 0px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  transform: rotate(-45deg);
+  @media screen and (max-width: 767px) {
+    right: 7px;
+  }
+  @media screen and (min-width: 768px) {
+    right: 8px;
+  }
+  @media screen and (min-width: 1366px) {
+    right: 14px;
+  }
+}

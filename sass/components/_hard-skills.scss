@@ -1,0 +1,25 @@
+.hard-skills {
+  @media screen and (min-width: 768px) {
+    width: 352px;
+  }
+}
+
+.hard-skills__label {
+  @extend %label;
+
+  margin-bottom: 60px;
+}
+
+.hard-skills-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.hard-skills-list__item {
+}
+
+.hard-skills-list__icon {
+  width: 105.68px;
+  height: 105.68px;
+}

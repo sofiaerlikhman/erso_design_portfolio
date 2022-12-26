@@ -1,0 +1,95 @@
+.modal-form {
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.field__label {
+  font-size: 16px;
+  line-height: 1.2;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+}
+
+.field__input {
+  outline: none;
+  display: block;
+  background-color: var(--modal-bg-input-color);
+  border: none;
+  border-radius: 6px;
+  padding: 11px 20px 11px 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 20px 14px 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 18px 20px 18px 20px;
+  }
+
+  &[type='text'] {
+    @extend %input;
+  }
+
+  &[type='email'] {
+    @extend %input;
+  }
+
+  &:focus {
+    outline: 1px solid var(--accent-color);
+  }
+}
+
+.field__textarea {
+  outline: none;
+
+  padding: 11px 20px 11px 20px;
+  display: block;
+  background-color: var(--modal-bg-input-color);
+  border: none;
+  border-radius: 6px;
+  height: 90px;
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 20px 14px 20px;
+    height: 110px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 140px;
+    padding: 18px 20px 18px 20px;
+  }
+
+  &[type='text'] {
+    @extend %input;
+  }
+
+  &:focus {
+    outline: 1px solid var(--accent-color);
+  }
+}
+
+%input {
+  font-family: 'Times New Roman';
+  font-size: 16px;
+  line-height: 1;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+}

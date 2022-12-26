@@ -1,0 +1,21 @@
+@import './base/global';
+@import './base/reset';
+
+@import './utils/variables';
+@import './utils/fonts';
+
+@import './layout/header/header';
+
+@import './components/hero';
+@import './components/advantages';
+@import './components/about-me';
+@import './components/portfolio';
+@import './components/hard-skills';
+@import './components/languages';
+@import './components/soft-skills';
+
+@import './components/backdrop';
+@import './components/modal';
+@import './components/modal-form';
+
+@import './layout/footer/footer';

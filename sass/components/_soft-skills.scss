@@ -1,0 +1,118 @@
+.soft-skills {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    width: 738px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 352px;
+  }
+}
+
+.soft-skills__label {
+  @extend %label;
+
+  margin-bottom: 60px;
+}
+
+.soft-skills-wrap {
+}
+
+.soft-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+.soft-skills-list__item:nth-child(1) > .field-info {
+  &::after {
+    width: 29%;
+  }
+  &::before {
+    width: 71%;
+  }
+}
+
+.soft-skills-list__item:nth-child(2) > .field-info {
+  &::after {
+    width: 24%;
+  }
+  &::before {
+    width: 76%;
+  }
+}
+
+.soft-skills-list__item:nth-child(3) > .field-info {
+  &::after {
+    width: 7%;
+  }
+  &::before {
+    width: 93%;
+  }
+}
+
+.soft-skills-list__item:nth-child(4) > .field-info {
+  &::after {
+    width: 18%;
+  }
+  &::before {
+    width: 82%;
+  }
+}
+
+.soft-skills-list__item:nth-child(5) > .field-info {
+  &::after {
+    width: 33%;
+  }
+  &::before {
+    width: 67%;
+  }
+}
+
+.soft-skills-list__item:nth-child(6) > .field-info {
+  &::after {
+    width: 11%;
+  }
+  &::before {
+    width: 89%;
+  }
+}
+
+.field-info {
+  // padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 1px;
+    width: 20%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--accent-color);
+    height: 3px;
+    width: 80%;
+  }
+}
+
+.field-info__type {
+}
+
+.field-info__percentage {
+}
