@@ -47,7 +47,7 @@ import wix from "../assets/images/wix.webp";
 import vscode from "../assets/images/vscode.webp";
 import cinema4d from "../assets/images/cinema4d.webp";
 import canva from "../assets/images/canva.webp";
-import frontlab from "../assets/images/frontlab.webp";
+import fontlab from "../assets/images/fontlab.webp";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────
@@ -106,7 +106,7 @@ export const portfolioData: PortfolioData = {
   { id: "vscode", label: "VS Code", tag: "Front-End Development", image: vscode },
   { id: "cinema4d", label: "Cinema 4D", tag: "3D & Motion Graphics", image: cinema4d },
   { id: "canva", label: "Canva", tag: "Rapid Content Creation", image: canva },
-  { id: "frontlab", label: "FrontLab", tag: "Typography", image: frontlab },
+  { id: "fontlab", label: "FontLab", tag: "Typography", image: fontlab },
   ],
 
   // Read by: About (the cream-colored bio section with the animated
