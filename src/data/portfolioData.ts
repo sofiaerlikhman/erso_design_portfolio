@@ -73,14 +73,14 @@ export const portfolioData: PortfolioData = {
   // Read by: MarqueeStrip (the row of small scrolling preview cards just
   // under the Hero).
   marquee: [
-    { id: "figma", label: "figma",  image: auroraCover },
-    { id: "adobe", label: "Lumen App", image: marqueeLumen },
-    { id: "wordpress", label: "Meridian Studio", image: meridianCover },
-    { id: "wix", tag: "Editorial Site", image: marqueeFieldnote },
-    { id: "vscode", tag: "Editorial Site", image: marqueeFieldnote },
-    { id: "cinema4d", tag: "Editorial Site", image: marqueeFieldnote },
-    { id: "topview", image: marqueeFieldnote },
-    { id: "canva", image: northwindCover },
+    { id: "figma", label: "Ather Studio", tag: "Brand Identity",  image: auroraCover },
+    { id: "adobe", label: "Ather Studio", tag: "Brand Identity", image: marqueeLumen },
+    { id: "wordpress", label: "Ather Studio", tag: "Brand Identity", image: meridianCover },
+    { id: "wix", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
+    { id: "vscode", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
+    { id: "cinema4d", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
+    { id: "topview", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
+    { id: "canva", label: "Ather Studio", tag: "Brand Identity", image: northwindCover },
     { id: "higgsfield", label: "Ather Studio", tag: "Brand Identity", image: marqueeAther },
   ],
 
