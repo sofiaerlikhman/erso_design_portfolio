@@ -39,23 +39,24 @@ export const portfolioData: PortfolioData = {
   // in all of these places).
   meta: {
     name: "Sofia Erlikhman",
-    role: "Designer & Director",
-    location: "Based in — set your city",
+    role: "Web & Graphik Designer",
+    location: "Based in Germany",
     availability: "Available for Q3/Q4 Projects",
-    email: "hello@example.com",
+    email: "sofiaerlikhman@gmail.com",
     resumeUrl: "resume.pdf",
     socials: [
-      { label: "Email", icon: "Mail", url: "mailto:hello@example.com" },
-      { label: "LinkedIn", icon: "Linkedin", url: "https://linkedin.com/in/your-handle" },
-      { label: "Instagram", icon: "Instagram", url: "https://instagram.com/your-handle" },
-      { label: "GitHub", icon: "Github", url: "https://github.com/your-handle" },
+      { label: "Email", icon: "Mail", url: "mailto:sofiaerlikhman@gmail.com" },
+      { label: "LinkedIn", icon: "Linkedin", url: "https://linkedin.com/#" },
+      { label: "Instagram", icon: "Instagram", url: "https://instagram.com/#" },
+      { label: "Facebook", icon: "Facebook", url: "https://instagram.com/#" },
+      { label: "TikTok", icon: "TikTok", url: "https://instagram.com/#" },
     ],
     // Off for now — flip to true whenever you're ready to show these.
     socialsVisible: false,
     navLinks: [
-      { label: "Selected Work", href: "#work" },
-      { label: "Experience", href: "#experience" },
       { label: "About", href: "#about" },
+      { label: "Experience", href: "#experience" },
+      { label: "Selected Work", href: "#work" },
       { label: "Contact", href: "#contact" },
     ],
   },
@@ -63,8 +64,8 @@ export const portfolioData: PortfolioData = {
   // Read by: Hero (the big full-screen intro at the very top of the page).
   hero: {
     eyebrow: "Portfolio & CV — 2026",
-    titleLines: ["DESIGN &", "DIRECTION"],
-    accentPhrase: "crafted with intent",
+    titleLines: ["GRAPHIC &", "WEB DESIGN" "DIRECTION"],
+    accentPhrase: "Sofia Erlikhman",
     ctaLabel: "Download Resume",
     ctaUrl: "resume.pdf",
   },
@@ -72,12 +73,15 @@ export const portfolioData: PortfolioData = {
   // Read by: MarqueeStrip (the row of small scrolling preview cards just
   // under the Hero).
   marquee: [
-    { id: "aurora", label: "Aurora Systems", tag: "Brand & Product", image: auroraCover },
-    { id: "lumen", label: "Lumen App", tag: "Product Design", image: marqueeLumen },
-    { id: "meridian", label: "Meridian Studio", tag: "Web Platform", image: meridianCover },
-    { id: "fieldnote", label: "Fieldnote", tag: "Editorial Site", image: marqueeFieldnote },
-    { id: "northwind", label: "Northwind & Co.", tag: "Identity", image: northwindCover },
-    { id: "ather", label: "Ather Studio", tag: "Brand Identity", image: marqueeAther },
+    { id: "figma", label: "figma",  image: auroraCover },
+    { id: "adobe", label: "Lumen App", image: marqueeLumen },
+    { id: "wordpress", label: "Meridian Studio", image: meridianCover },
+    { id: "wix", tag: "Editorial Site", image: marqueeFieldnote },
+    { id: "vscode", tag: "Editorial Site", image: marqueeFieldnote },
+    { id: "cinema4d", tag: "Editorial Site", image: marqueeFieldnote },
+    { id: "topview", image: marqueeFieldnote },
+    { id: "canva", image: northwindCover },
+    { id: "higgsfield", label: "Ather Studio", tag: "Brand Identity", image: marqueeAther },
   ],
 
   // Read by: About (the cream-colored bio section with the animated
@@ -85,15 +89,15 @@ export const portfolioData: PortfolioData = {
   about: {
     heading: "About",
     paragraphs: [
-      "I'm a designer and director working across brand, product, and web — building visual systems that hold together at every scale, from a single icon to a full platform.",
-      "My process starts with structure: clear hierarchies, honest typography, and motion that explains itself. Everything after that is refinement.",
-      "Outside client work, I spend my time sketching type, studying editorial layout, and trying to make interfaces feel a little more considered than they need to.",
+      "I am a graphic and web designer working across brand identity, print, and AI design. I build cohesive visual systems that hold together at every scale, from physical packaging to full digital platforms.",
+      "My background in machine learning and AI allows me to combine structural logic with design intuition. I turn complex ideas into functional websites, physical products, and engaging visual content.",
+      "Design is more than just making things look good. It is about how smart systems, quality content, and visual craft come together to create meaningful experiences.",
     ],
-    stats: [
-      { label: "Years of Experience", value: "8+" },
-      { label: "Shipped Products", value: "24" },
-      { label: "Client Partners", value: "16" },
-    ],
+  //    stats: [
+  //    { label: "Years of Experience", value: "3+" },
+  //     { label: "Shipped Products", value: "24" },
+  //    { label: "Client Partners", value: "16" },
+  //   ],
   },
 
   // Read by: ServicesResume (rendered as the expandable job-history
@@ -101,41 +105,60 @@ export const portfolioData: PortfolioData = {
   experience: [
     {
       id: "exp-1",
-      role: "Design Director",
-      company: "Studio Meridian",
-      period: "2023 — Present",
-      description:
-        "Leading brand and product design for early-stage startups, from initial identity through to shipped interfaces.",
-      skills: ["Figma", "Framer", "Design Systems", "Art Direction"],
-      wins: [
-        "Built a shared design system adopted across 6 product teams",
-        "Directed rebrand that shipped alongside a $12M Series A",
-      ],
+      role: "Lead Designer & Visual Strategist",
+      company: "Five Bays Resort",
+      period: "2025 — Present",
+"Directing ongoing brand development and content production for a luxury resort venture, overseeing everything from website design and AI-generated media to launch event planning and custom packaging.",
+  skills: [
+    "Brand Identity",
+    "Web Design",
+    "AI Content & Video",
+    "Print & Packaging",
+    "Event Design"
+  ],
+  wins: [
+    "Produced AI-driven promo videos and visual assets for digital marketing campaigns",
+    "Designed the corporate website, promotional brochures, and physical gift bags",
+    "Co-organized and executed the visual design strategy for the resort launch event"
+  ],
     },
     {
       id: "exp-2",
-      role: "Senior Product Designer",
-      company: "Northwind & Co.",
-      period: "2020 — 2023",
+      role: "Lead Designer",
+      company: "DuTACS GmbH",
+      period: "2023 — Present",
       description:
-        "Owned end-to-end design for the core web app, partnering directly with engineering on implementation.",
-      skills: ["React", "TypeScript", "User Research", "Prototyping"],
-      wins: [
-        "Redesigned onboarding, cutting drop-off by 34%",
-        "Ran the first in-house usability lab for the product team",
+      "Spearheaded a complete brand overhaul, designing a responsive web platform, managing print marketing campaigns, and producing multi-format digital content.",
+    skills: [
+      "Rebranding",
+      "Web Design",
+      "Print Advertising",
+      "Content Creation",
+      "Graphic Design"
+    ],
+    wins: [
+      "Executed a comprehensive company rebranding across digital and physical mediums",
+      "Designed and launched a modern, responsive corporate website",
+      "Produced all print advertising collateral and multimedia content pipelines"
       ],
     },
     {
       id: "exp-3",
-      role: "Product Designer",
-      company: "Aurora Systems",
-      period: "2018 — 2020",
-      description:
-        "Designed core flows for a B2B SaaS platform and helped establish the company's first component library.",
-      skills: ["Sketch", "HTML/CSS", "Illustration"],
+      role: "Independent Projects",
+company: "Freelance & Pro Bono Work",
+  period: "2023 — Present",
+  description:
+    "Designing digital products and print campaigns for independent clients and non-profits, specializing in web design, editorial layouts, and social media production.",
+     skills: [
+    "Web Design",
+    "Digital Catalogues",
+    "Print Design",
+    "Social Content",
+     ],
       wins: [
-        "Shipped the v1 component library still in use today",
-        "Partnered with marketing on the product's first brand refresh",
+        "Designed custom websites and interactive digital catalogues tailored to specific client goals",
+        "Delivered pro bono brand identities and print campaigns for community-driven initiatives",
+        "Developed cohesive social media templates and visual content libraries for diverse audiences"
       ],
     },
   ],
@@ -180,50 +203,50 @@ export const portfolioData: PortfolioData = {
   // Read by: ServicesResume (the "Languages" list).
   // Placeholder — replace with your actual languages (you mentioned 5).
   languages: [
-    { name: "Language 1", level: "Native" },
-    { name: "Language 2", level: "Fluent" },
-    { name: "Language 3", level: "Fluent" },
-    { name: "Language 4", level: "Conversational" },
-    { name: "Language 5", level: "Conversational" },
+    { name: "Ukrainian", level: "Native" },
+    { name: "Russian", level: "Native" },
+    { name: "English", level: "Fluent" },
+    { name: "German", level: "Fluent" },
+    { name: "French", level: "Fluent" },
   ],
 
   // Read by: ServicesResume (the "01 / 02 / 03" numbered service blocks
   // near the bottom of that section — the number itself is generated
   // automatically from each entry's position in this list, so you don't
   // need to keep a "number" field in sync by hand when reordering).
-  services: [
-    {
-      id: "svc-1",
-      title: "Brand & Identity",
-      description:
-        "Naming, visual identity, and the systems that keep a brand consistent from a business card to a billboard.",
-    },
-    {
-      id: "svc-2",
-      title: "Product & Web Design",
-      description:
-        "End-to-end interface design — research, wireframes, high-fidelity UI, and the design system that ties it together.",
-    },
-    {
-      id: "svc-3",
-      title: "Art Direction",
-      description:
-        "Creative direction for campaigns, photography, and motion — keeping every touchpoint on-brand and intentional.",
-    },
-  ],
+  //   services: [
+  //     {
+  //       id: "svc-1",
+  //       title: "Brand & Identity",
+  //       description:
+  //         "Naming, visual identity, and the systems that keep a brand consistent from a business card to a billboard.",
+  //     },
+  //     {
+  //       id: "svc-2",
+  //       title: "Product & Web Design",
+  //       description:
+  //         "End-to-end interface design — research, wireframes, high-fidelity UI, and the design system that ties it together.",
+  //     },
+  //     {
+  //       id: "svc-3",
+  //       title: "Art Direction",
+  //       description:
+  //         "Creative direction for campaigns, photography, and motion — keeping every touchpoint on-brand and intentional.",
+  //     },
+  //   ],
 
   // Read by: ServicesResume (the small heading block in the sticky left
   // column of that section).
   resumeIntro: {
-    eyebrow: "Experience & Services",
-    heading: "Where I've worked, and how I can help.",
+    eyebrow: "Resume & Credentials",
+    heading: "Experience, education, and core strengths.",
     description:
-      "An expandable look at recent roles, followed by education, skills, and the core services I offer on client engagements.",
+      "A summary of my recent roles, academic foundation, interpersonal skills, and spoken languages.",
   },
 
   // Read by: SelectedProjects (the heading above the project cards).
   workIntro: {
-    eyebrow: "Selected Work",
+    eyebrow: "Portfolio",
     heading: "Selected Projects",
   },
 
@@ -239,8 +262,8 @@ export const portfolioData: PortfolioData = {
       categoryTags: ["Brand", "Product Design", "Design System"],
       description:
         "A full brand and product refresh for a B2B analytics platform — new identity, component library, and marketing site, shipped in a single quarter.",
-      liveUrl: "https://example.com/aurora",
-      caseStudyUrl: "https://example.com/aurora/case-study",
+     //  liveUrl: "https://example.com/aurora",
+     //  caseStudyUrl: "https://example.com/aurora/case-study",
       images: [auroraCover, auroraDetail, auroraGrid],
     },
     {
@@ -251,9 +274,9 @@ export const portfolioData: PortfolioData = {
       categoryTags: ["Web Platform", "UI/UX", "Mobile"],
       description:
         "A booking platform redesign spanning web and mobile, focused on simplifying a multi-step flow into three clear steps.",
-      liveUrl: "https://example.com/meridian",
+      // liveUrl: "https://example.com/meridian",
       caseStudyUrl: "https://example.com/meridian/case-study",
-      images: [meridianCover, meridianDetail, meridianFlow],
+      // images: [meridianCover, meridianDetail, meridianFlow],
     },
     {
       id: "northwind-co",
@@ -263,8 +286,8 @@ export const portfolioData: PortfolioData = {
       categoryTags: ["Identity", "Packaging", "Editorial"],
       description:
         "Identity and packaging system for a specialty goods retailer, extended into an editorial-style catalog and web presence.",
-      caseStudyUrl: "https://example.com/northwind/case-study",
-      images: [northwindCover, northwindDetail, northwindGrid],
+      // caseStudyUrl: "https://example.com/northwind/case-study",
+      // images: [northwindCover, northwindDetail, northwindGrid],
     },
   ],
 
