@@ -13,41 +13,41 @@ import type { PortfolioData } from "../types/portfolio";
 // src/assets/images/ and update the import path + the reference below) —
 // nothing else in the codebase needs to change.
 // 1. Children of the Sun
-import detiSolntsaPackaging from "../assets/images/detiSolntsaPackaging.png";
-import detiSolntsaPoster from "../assets/images/detiSolntsaPoster.png";
-import detiSolntsaCertificate from "../assets/images/detiSolntsaCertificate.png";
+import detiSolntsaPackaging from "../assets/images/detiSolntsaPackaging.webp";
+import detiSolntsaPoster from "../assets/images/detiSolntsaPoster.webp";
+import detiSolntsaCertificate from "../assets/images/detiSolntsaCertificate.webp";
 
 // 2. Zooniam
-import zooniamPackaging from "../assets/images/zooniamPackaging.png";
-import zooniamSocial from "../assets/images/zooniamSocial.png";
-import zooniamTotes from "../assets/images/zooniamTotes.png";
+import zooniamPackaging from "../assets/images/zooniamPackaging.webp";
+import zooniamSocial from "../assets/images/zooniamSocial.webp";
+import zooniamTotes from "../assets/images/zooniamTotes.webp";
 
 // 3. DOBROVA Brand
-import dobrovaMobileMockup from "../assets/images/dobrovaMobileMockup.png";
-import dobrovaDesktopMockup from "../assets/images/dobrovaDesktopMockup.png";
-import dobrovaMultiDevice from "../assets/images/dobrovaMultiDevice.png";
+import dobrovaMobileMockup from "../assets/images/dobrovaMobileMockup.webp";
+import dobrovaDesktopMockup from "../assets/images/dobrovaDesktopMockup.webp";
+import dobrovaMultiDevice from "../assets/images/dobrovaMultiDevice.webp";
 
 // 4. Mate & Champagner
-import mateChampagnerMockup from "../assets/images/mateChampagnerMockup.png";
-import mateChampagnerUserFlow from "../assets/images/mateChampagnerUserFlow.png";
-import mateChampagnerLaptop from "../assets/images/mateChampagnerLaptop.png";
+import mateChampagnerMockup from "../assets/images/mateChampagnerMockup.webp";
+import mateChampagnerUserFlow from "../assets/images/mateChampagnerUserFlow.webp";
+import mateChampagnerLaptop from "../assets/images/mateChampagnerLaptop.webp";
 
 // 5. Ukrainian Art Museum App
-import museumAppShowcase from "../assets/images/museumAppShowcase.png";
-import museumWireframes from "../assets/images/museumWireframes.png";
-import museumAppInHand from "../assets/images/museumAppInHand.png";
+import museumAppShowcase from "../assets/images/museumAppShowcase.webp";
+import museumWireframes from "../assets/images/museumWireframes.webp";
+import museumAppInHand from "../assets/images/museumAppInHand.webp";
 
 // 6. Hard Skills
-import figma from "../assets/images/figma.png";
-import adobe from "../assets/images/adobe.png";
-import higgsfield from "../assets/images/higgsfield.png";
-import topview from "../assets/images/topview.png";
-import wordpress from "../assets/images/wordpress.png";
-import wix from "../assets/images/wix.png";
-import vscode from "../assets/images/vscode.png";
-import cinema4d from "../assets/images/cinema4d.png";
-import canva from "../assets/images/canva.png";
-import frontlab from "../assets/images/frontlab.png";
+import figma from "../assets/images/figma.webp";
+import adobe from "../assets/images/adobe.webp";
+import higgsfield from "../assets/images/higgsfield.webp";
+import topview from "../assets/images/topview.webp";
+import wordpress from "../assets/images/wordpress.webp";
+import wix from "../assets/images/wix.webp";
+import vscode from "../assets/images/vscode.webp";
+import cinema4d from "../assets/images/cinema4d.webp";
+import canva from "../assets/images/canva.webp";
+import frontlab from "../assets/images/frontlab.webp";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────
@@ -304,7 +304,7 @@ company: "Freelance & Pro Bono Work",
   id: "children-of-the-sun",
   title: "Children of the Sun",
   client: "Kharkiv charitable organization Children of the Sun",
-  //year: "2021",
+  year: "2021",
   categoryTags: ["Brand Identity", "Packaging", "Print & Merchandise"],
   description:
     "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
@@ -314,6 +314,7 @@ company: "Freelance & Pro Bono Work",
       id: "zooniam-concept",
   title: "Zooniam",
   client: "Concept Project",
+      year: "2024",
   categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
   description:
     "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
@@ -323,6 +324,7 @@ company: "Freelance & Pro Bono Work",
       id: "dobrova-brand",
   title: "DOBROVA Brand",
   client: "DOBROVA",
+      year: "2026",
   categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
   description:
     "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
@@ -332,6 +334,7 @@ company: "Freelance & Pro Bono Work",
       id: "ukraine-museum-app",
   title: "Ukrainian Art Museum App",
   client: "Concept Project",
+      year: "2023",
   categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
   description:
     "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
@@ -341,6 +344,7 @@ company: "Freelance & Pro Bono Work",
      id: "mate-champagner",
   title: "Mate & Champagner",
   client: "City of Wiesbaden",
+      year: "2022",
   categoryTags: ["UX Architecture", "Web Platform", "Design System"],
   description:
     "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
