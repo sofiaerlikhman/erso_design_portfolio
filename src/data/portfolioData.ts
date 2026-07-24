@@ -276,8 +276,8 @@ company: "Freelance & Pro Bono Work",
       description:
         "A booking platform redesign spanning web and mobile, focused on simplifying a multi-step flow into three clear steps.",
       // liveUrl: "https://example.com/meridian",
-      caseStudyUrl: "https://example.com/meridian/case-study",
-      // images: [meridianCover, meridianDetail, meridianFlow],
+      //caseStudyUrl: "https://example.com/meridian/case-study",
+      images: [meridianCover, meridianDetail, meridianFlow],
     },
     {
       id: "northwind-co",
@@ -288,7 +288,7 @@ company: "Freelance & Pro Bono Work",
       description:
         "Identity and packaging system for a specialty goods retailer, extended into an editorial-style catalog and web presence.",
       // caseStudyUrl: "https://example.com/northwind/case-study",
-      // images: [northwindCover, northwindDetail, northwindGrid],
+      images: [northwindCover, northwindDetail, northwindGrid],
     },
   ],
 
