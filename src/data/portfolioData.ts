@@ -215,26 +215,26 @@ company: "Freelance & Pro Bono Work",
   // near the bottom of that section — the number itself is generated
   // automatically from each entry's position in this list, so you don't
   // need to keep a "number" field in sync by hand when reordering).
-  //   services: [
-  //     {
-  //       id: "svc-1",
-  //       title: "Brand & Identity",
-  //       description:
-  //         "Naming, visual identity, and the systems that keep a brand consistent from a business card to a billboard.",
-  //     },
-  //     {
-  //       id: "svc-2",
-  //       title: "Product & Web Design",
-  //       description:
-  //         "End-to-end interface design — research, wireframes, high-fidelity UI, and the design system that ties it together.",
-  //     },
-  //     {
-  //       id: "svc-3",
-  //       title: "Art Direction",
-  //       description:
-  //         "Creative direction for campaigns, photography, and motion — keeping every touchpoint on-brand and intentional.",
-  //     },
-  //   ],
+     services: [
+       {
+         id: "svc-1",
+         title: "Brand Identity & Print",
+         description:
+           "Logo design, brand strategy, physical packaging and print collateral that establish a strong physical presence.",
+       },
+       {
+         id: "svc-2",
+         title: "Product & Web Design",
+         description:
+           "Responsive website design, digital catalogues, and user interfaces designed to look sharp and convert visitors.",
+       },
+       {
+         id: "svc-3",
+         title: "AI Media & Content Production",
+         description:
+           "Custom AI image pipelines, short-form promotional videos, and multi-format social content for ongoing marketing.",
+       },
+     ],
 
   // Read by: ServicesResume (the small heading block in the sticky left
   // column of that section).
