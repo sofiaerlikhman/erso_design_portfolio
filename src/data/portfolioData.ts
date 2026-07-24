@@ -64,7 +64,7 @@ export const portfolioData: PortfolioData = {
   // Read by: Hero (the big full-screen intro at the very top of the page).
   hero: {
     eyebrow: "Portfolio & CV — 2026",
-    titleLines: ["GRAPHIC &", "WEB DESIGN" "DIRECTION"],
+    titleLines: ["GRAPHIC &", "WEB DESIGN"],
     accentPhrase: "Sofia Erlikhman",
     ctaLabel: "Download Resume",
     ctaUrl: "resume.pdf",
@@ -108,7 +108,8 @@ export const portfolioData: PortfolioData = {
       role: "Lead Designer & Visual Strategist",
       company: "Five Bays Resort",
       period: "2025 — Present",
-"Directing ongoing brand development and content production for a luxury resort venture, overseeing everything from website design and AI-generated media to launch event planning and custom packaging.",
+      description:
+      "Directing ongoing brand development and content production for a luxury resort venture, overseeing everything from website design and AI-generated media to launch event planning and custom packaging.",
   skills: [
     "Brand Identity",
     "Web Design",
