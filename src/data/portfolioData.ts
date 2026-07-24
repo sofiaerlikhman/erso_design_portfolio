@@ -12,18 +12,42 @@ import type { PortfolioData } from "../types/portfolio";
 // time. Replace any of these imports with your own files (drop them in
 // src/assets/images/ and update the import path + the reference below) —
 // nothing else in the codebase needs to change.
-import auroraCover from "../assets/images/project-aurora-1.svg";
-import auroraDetail from "../assets/images/project-aurora-2.svg";
-import auroraGrid from "../assets/images/project-aurora-3.svg";
-import meridianCover from "../assets/images/project-meridian-1.svg";
-import meridianDetail from "../assets/images/project-meridian-2.svg";
-import meridianFlow from "../assets/images/project-meridian-3.svg";
-import northwindCover from "../assets/images/project-northwind-1.svg";
-import northwindDetail from "../assets/images/project-northwind-2.svg";
-import northwindGrid from "../assets/images/project-northwind-3.svg";
-import marqueeLumen from "../assets/images/marquee-lumen.svg";
-import marqueeFieldnote from "../assets/images/marquee-fieldnote.svg";
-import marqueeAther from "../assets/images/marquee-ather.svg";
+// 1. Children of the Sun
+import detiSolntsaPackaging from "../assets/images/detiSolntsaPackaging.png";
+import detiSolntsaPoster from "../assets/images/detiSolntsaPoster.png";
+import detiSolntsaCertificate from "../assets/images/detiSolntsaCertificate.png";
+
+// 2. Zooniam
+import zooniamPackaging from "../assets/images/zooniamPackaging.png";
+import zooniamSocial from "../assets/images/zooniamSocial.png";
+import zooniamTotes from "../assets/images/zooniamTotes.png";
+
+// 3. DOBROVA Brand
+import dobrovaMobileMockup from "../assets/images/dobrovaMobileMockup.png";
+import dobrovaDesktopMockup from "../assets/images/dobrovaDesktopMockup.png";
+import dobrovaMultiDevice from "../assets/images/dobrovaMultiDevice.png";
+
+// 4. Mate & Champagner
+import mateChampagnerMockup from "../assets/images/mateChampagnerMockup.png";
+import mateChampagnerUserFlow from "../assets/images/mateChampagnerUserFlow.png";
+import mateChampagnerLaptop from "../assets/images/mateChampagnerLaptop.png";
+
+// 5. Ukrainian Art Museum App
+import museumAppShowcase from "../assets/images/museumAppShowcase.png";
+import museumWireframes from "../assets/images/museumWireframes.png";
+import museumAppInHand from "../assets/images/museumAppInHand.png";
+
+// 6. Hard Skills
+import figma from "../assets/images/figma.png";
+import adobe from "../assets/images/adobe.png";
+import higgsfield from "../assets/images/higgsfield.png";
+import topview from "../assets/images/topview.png";
+import wordpress from "../assets/images/wordpress.png";
+import wix from "../assets/images/wix.png";
+import vscode from "../assets/images/vscode.png";
+import cinema4d from "../assets/images/cinema4d.png";
+import canva from "../assets/images/canva.png";
+import frontlab from "../assets/images/frontlab.png";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────
@@ -73,15 +97,16 @@ export const portfolioData: PortfolioData = {
   // Read by: MarqueeStrip (the row of small scrolling preview cards just
   // under the Hero).
   marquee: [
-    { id: "figma", label: "Ather Studio", tag: "Brand Identity",  image: auroraCover },
-    { id: "adobe", label: "Ather Studio", tag: "Brand Identity", image: marqueeLumen },
-    { id: "wordpress", label: "Ather Studio", tag: "Brand Identity", image: meridianCover },
-    { id: "wix", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
-    { id: "vscode", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
-    { id: "cinema4d", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
-    { id: "topview", label: "Ather Studio", tag: "Brand Identity", image: marqueeFieldnote },
-    { id: "canva", label: "Ather Studio", tag: "Brand Identity", image: northwindCover },
-    { id: "higgsfield", label: "Ather Studio", tag: "Brand Identity", image: marqueeAther },
+  { id: "figma", label: "Figma", tag: "UI/UX & Prototyping", image: figma },
+  { id: "adobe", label: "Adobe Creative Cloud", tag: "Brand & Graphic Design", image: adobe },
+  { id: "higgsfield", label: "Higgsfield AI", tag: "AI Video & Motion Generation", image: higgsfield },
+  { id: "topview", label: "TopView AI", tag: "AI Video Editing & Content", image: topview },
+  { id: "wordpress", label: "WordPress", tag: "Web Design & CMS", image: wordpress },
+  { id: "wix", label: "Wix Studio", tag: "Web Design & Layout", image: wix },
+  { id: "vscode", label: "VS Code", tag: "Front-End Development", image: vscode },
+  { id: "cinema4d", label: "Cinema 4D", tag: "3D & Motion Graphics", image: cinema4d },
+  { id: "canva", label: "Canva", tag: "Rapid Content Creation", image: canva },
+  { id: "frontlab", label: "FrontLab", tag: "Typography", image: frontlab },
   ],
 
   // Read by: About (the cream-colored bio section with the animated
@@ -162,6 +187,26 @@ company: "Freelance & Pro Bono Work",
         "Developed cohesive social media templates and visual content libraries for diverse audiences"
       ],
     },
+    {
+      id: "exp-4",
+      role: "Designer & SMM Specialist (Pro Bono)",
+      company: "Kharkiv charitable organization of parents of children with chromosomal abnormalities and doctors of genetics Children of the Sun",
+      period: "2020 — 2022",
+      description:
+      "Delivered pro bono visual design and social media management for a regional non-profit supporting children with chromosomal conditions and their families in Kharkiv.",
+    skills: [
+    "Brand & Visual Design",
+    "Social Media Strategy",
+    "Content Creation",
+    "Print Collateral",
+    "Community Outreach"
+    ],
+    wins: [
+    "Developed cohesive social media visual identity and graphic templates to increase community awareness",
+    "Created print educational materials, brochures, and campaign assets for fundraising initiatives",
+    "Managed social channels to grow digital engagement and strengthen family support networks"
+      ],
+    },
   ],
 
   // Read by: ServicesResume (the "Education" list).
@@ -171,22 +216,22 @@ company: "Freelance & Pro Bono Work",
       id: "edu-1",
       degree: "Bachelor of Arts",
       field: "Graphic Design",
-      institution: "[Add institution name]",
-      period: "20XX — 20XX",
+      institution: "[State Akademie of Design and Arts]",
+      period: "2019 — 2023",
     },
     {
       id: "edu-2",
       degree: "Bachelor of Science",
       field: "Artificial Intelligence",
-      institution: "[Add institution name]",
-      period: "20XX — 20XX",
+      institution: "[Kharkiv National University of Radio Electronics]",
+      period: "2021 — 2024",
     },
     {
       id: "edu-3",
       degree: "Master of Arts",
-      field: "Communication Design",
-      institution: "[Add institution name]",
-      period: "20XX — 20XX",
+      field: "Communication Design – Crossmedia Spaces ",
+      institution: "[Hochschule RheinMain]",
+      period: "2023 — 2025",
     },
   ],
 
@@ -256,39 +301,50 @@ company: "Freelance & Pro Bono Work",
   // type in src/types/portfolio.ts for what every field does.
   projects: [
     {
-      id: "aurora-systems",
-      title: "Aurora Systems",
-      client: "Aurora Systems, Inc.",
-      year: "2025",
-      categoryTags: ["Brand", "Product Design", "Design System"],
-      description:
-        "A full brand and product refresh for a B2B analytics platform — new identity, component library, and marketing site, shipped in a single quarter.",
-     //  liveUrl: "https://example.com/aurora",
-     //  caseStudyUrl: "https://example.com/aurora/case-study",
-      images: [auroraCover, auroraDetail, auroraGrid],
+  id: "children-of-the-sun",
+  title: "Children of the Sun",
+  client: "Kharkiv charitable organization Children of the Sun",
+  //year: "2021",
+  categoryTags: ["Brand Identity", "Packaging", "Print & Merchandise"],
+  description:
+    "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
+  images: [detiSolntsaPackaging, detiSolntsaPoster, detiSolntsaCertificate],
     },
     {
-      id: "meridian-studio",
-      title: "Meridian Studio",
-      client: "Meridian Studio",
-      year: "2024",
-      categoryTags: ["Web Platform", "UI/UX", "Mobile"],
-      description:
-        "A booking platform redesign spanning web and mobile, focused on simplifying a multi-step flow into three clear steps.",
-      // liveUrl: "https://example.com/meridian",
-      //caseStudyUrl: "https://example.com/meridian/case-study",
-      images: [meridianCover, meridianDetail, meridianFlow],
+      id: "zooniam-concept",
+  title: "Zooniam",
+  client: "Concept Project",
+  categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
+  description:
+    "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
+  images: [zooniamPackaging, zooniamSocial, zooniamTotes],
     },
     {
-      id: "northwind-co",
-      title: "Northwind & Co.",
-      client: "Northwind & Co.",
-      year: "2023",
-      categoryTags: ["Identity", "Packaging", "Editorial"],
-      description:
-        "Identity and packaging system for a specialty goods retailer, extended into an editorial-style catalog and web presence.",
-      // caseStudyUrl: "https://example.com/northwind/case-study",
-      images: [northwindCover, northwindDetail, northwindGrid],
+      id: "dobrova-brand",
+  title: "DOBROVA Brand",
+  client: "DOBROVA",
+  categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
+  description:
+    "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
+  images: [dobrovaMobileMockup, dobrovaDesktopMockup, dobrovaMultiDevice],
+    },
+    {
+      id: "ukraine-museum-app",
+  title: "Ukrainian Art Museum App",
+  client: "Concept Project",
+  categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
+  description:
+    "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
+  images: [museumAppShowcase, museumWireframes, museumAppInHand],
+    },
+    {
+     id: "mate-champagner",
+  title: "Mate & Champagner",
+  client: "City of Wiesbaden",
+  categoryTags: ["UX Architecture", "Web Platform", "Design System"],
+  description:
+    "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
+  images: [mateChampagnerMockup, mateChampagnerUserFlow, mateChampagnerLaptop],
     },
   ],
 
