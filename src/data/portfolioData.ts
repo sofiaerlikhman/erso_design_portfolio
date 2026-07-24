@@ -93,11 +93,11 @@ export const portfolioData: PortfolioData = {
       "My background in machine learning and AI allows me to combine structural logic with design intuition. I turn complex ideas into functional websites, physical products, and engaging visual content.",
       "Design is more than just making things look good. It is about how smart systems, quality content, and visual craft come together to create meaningful experiences.",
     ],
-  //    stats: [
-  //    { label: "Years of Experience", value: "3+" },
-  //     { label: "Shipped Products", value: "24" },
-  //    { label: "Client Partners", value: "16" },
-  //   ],
+      stats: [
+      { label: "Years of Experience", value: "3+" },
+       { label: "Core Disciplines", value: "4" },
+      { label: "Client Partners", value: "11" },
+     ],
   },
 
   // Read by: ServicesResume (rendered as the expandable job-history
@@ -147,7 +147,7 @@ export const portfolioData: PortfolioData = {
       id: "exp-3",
       role: "Independent Projects",
 company: "Freelance & Pro Bono Work",
-  period: "2023 — Present",
+  period: "2022 — Present",
   description:
     "Designing digital products and print campaigns for independent clients and non-profits, specializing in web design, editorial layouts, and social media production.",
      skills: [
