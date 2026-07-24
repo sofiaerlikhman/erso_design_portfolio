@@ -1,0 +1,112 @@
+/*
+ * index.css: The site's global stylesheet. Most of the actual visual
+ * styling on this site is written as Tailwind utility classes directly
+ * inside the .tsx component files (e.g. className="text-4xl font-bold"),
+ * so this file only holds the handful of things Tailwind classes alone
+ * can't express: loading the custom fonts, a few custom effects
+ * (the metallic gradient text, the marquee's fade-out edges), and some
+ * base defaults applied to the whole page.
+ */
+
+/* These three lines pull in all of Tailwind's generated CSS — its base
+   reset styles, its small set of reusable component classes, and (the
+   big one) every utility class like "flex" or "text-lg" that gets used
+   throughout the project. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Drop the real Abygaer font file into public/fonts/Abygaer/ (see the
+ * README there) and this will pick it up automatically — the leading
+ * slash is a public-root reference, so Vite rewrites it correctly no
+ * matter what subpath the site is deployed under. Until the file exists,
+ * the browser silently falls back to Playfair Display / serif — nothing
+ * breaks.
+ */
+@font-face {
+  font-family: "Abygaer";
+  src: url("/fonts/Abygaer/Abygaer-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @layer base holds default styling applied broadly across the whole
+   page, rather than one-off utility classes used in specific spots. */
+@layer base {
+  html {
+    /* Makes clicking a nav link (e.g. "#about") glide smoothly down to
+       that section instead of jumping there instantly. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Sets the whole page's default background color, text color, and
+       font — individual sections (like the cream-colored About section)
+       override just the parts they need to. */
+    @apply bg-bg-dark text-text-light font-body antialiased;
+    /*
+     * Safety net against accidental horizontal scrollbars on mobile (e.g.
+     * from a stray wide element or negative margin). Applied to body only,
+     * not html, to avoid the historical iOS Safari quirk where overflow on
+     * the html element can affect position:fixed descendants (our navbar).
+     */
+    overflow-x: clip;
+  }
+
+  ::selection {
+    /* Styles the highlight color when a visitor selects/drags over text
+       with their mouse, so it matches the site's color palette instead
+       of the browser's default blue. */
+    @apply bg-cream text-text-dark;
+  }
+}
+
+/* @layer utilities holds small custom utility classes (used the same
+   way as Tailwind's own, e.g. className="text-metallic") for effects
+   Tailwind doesn't provide a built-in class for. */
+@layer utilities {
+  /* Metallic gradient text: linear-gradient(180deg, #8A94A0 0%, #E2ECF3 100%) */
+  .text-metallic {
+    /* This is the trick behind the shiny "metallic" headline text: draw
+       a gradient as the background, then clip that background so it's
+       only visible in the shape of the text itself (and make the actual
+       text color transparent so the gradient shows through). */
+    background-image: linear-gradient(180deg, #8a94a0 0%, #e2ecf3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Edge fade mask for the scroll-driven marquee rows */
+  .marquee-fade {
+    /* Fades the left and right edges of an element to fully transparent,
+       so the scrolling marquee cards appear to gently disappear at the
+       screen edges instead of being cut off abruptly. -webkit-mask-image
+       is the Safari-specific version of the same standard property. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  .clamp-hero {
+    /* Used for the giant Hero headline. clamp(min, preferred, max) means:
+       never render smaller than 2.75rem, never larger than 7.5rem, and
+       in between, scale smoothly with the viewport width (5vw) — so the
+       headline is huge on desktop, but shrinks gracefully on mobile
+       instead of overflowing or needing a separate breakpoint override. */
+    font-size: clamp(2.75rem, 5vw + 1.5rem, 7.5rem);
+  }
+}

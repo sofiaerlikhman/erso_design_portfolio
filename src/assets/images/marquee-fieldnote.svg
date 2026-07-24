@@ -1,0 +1,15 @@
+<svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#282420"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="360" fill="url(#g)"/>
+  <g stroke="#D9C4AA" stroke-opacity="0.2">
+    <line x1="0" y1="120" x2="500" y2="120"/>
+    <line x1="0" y1="240" x2="500" y2="240"/>
+  </g>
+  <text x="32" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#F6E4CF" opacity="0.9">Fieldnote</text>
+  <text x="32" y="328" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#D7E2EA" opacity="0.6">Editorial Site</text>
+</svg>

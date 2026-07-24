@@ -1,0 +1,12 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#151515"/>
+      <stop offset="100%" stop-color="#3a342b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <path d="M0,420 C220,340 340,500 560,400 C660,350 720,420 800,380 L800,600 L0,600 Z" fill="#F6E4CF" opacity="0.06"/>
+  <text x="48" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Northwind &amp; Co.</text>
+  <text x="48" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Identity — Cover</text>
+</svg>

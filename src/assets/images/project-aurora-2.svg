@@ -1,0 +1,13 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#242019"/>
+      <stop offset="100%" stop-color="#0C0C0C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <rect x="60" y="60" width="680" height="480" fill="none" stroke="#D9C4AA" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="400" cy="300" r="140" fill="none" stroke="#E2ECF3" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="48" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Aurora Systems</text>
+  <text x="48" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Design System — Detail</text>
+</svg>

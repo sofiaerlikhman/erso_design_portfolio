@@ -1,0 +1,17 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#302b23"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g stroke="#D9C4AA" stroke-opacity="0.18">
+    <line x1="100" y1="60" x2="100" y2="540"/>
+    <line x1="300" y1="60" x2="300" y2="540"/>
+    <line x1="500" y1="60" x2="500" y2="540"/>
+    <line x1="700" y1="60" x2="700" y2="540"/>
+  </g>
+  <text x="48" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Northwind &amp; Co.</text>
+  <text x="48" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Editorial — Grid</text>
+</svg>

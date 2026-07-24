@@ -1,0 +1,18 @@
+# Normalize line endings to LF for all text files, both in the
+# repository and on checkout. Without this, Git falls back to each
+# contributor's local core.autocrlf setting (Windows defaults to
+# converting LF -> CRLF on checkout), which is what caused the "LF
+# will be replaced by CRLF" warnings — and would cause noisy
+# line-ending-only diffs between this Windows machine and the Linux
+# runner that builds the project in GitHub Actions.
+* text=auto eol=lf
+
+# Fonts and images are binary — Git should never rewrite their bytes.
+*.woff2 binary
+*.woff binary
+*.ttf binary
+*.otf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary

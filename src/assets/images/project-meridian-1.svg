@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#2a2e33"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2ECF3"/>
+      <stop offset="100%" stop-color="#8A94A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <ellipse cx="180" cy="470" rx="260" ry="180" fill="url(#accent2)" opacity="0.10"/>
+  <text x="48" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Meridian Studio</text>
+  <text x="48" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Web Platform — Cover</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C0C0C"/>
+      <stop offset="100%" stop-color="#26221c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#8A94A0" stroke-opacity="0.25">
+    <circle cx="400" cy="300" r="60"/>
+    <circle cx="400" cy="300" r="120"/>
+    <circle cx="400" cy="300" r="180"/>
+  </g>
+  <text x="48" y="530" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Northwind &amp; Co.</text>
+  <text x="48" y="566" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Packaging — Detail</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#26221c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#D9C4AA" stroke-opacity="0.2">
+    <rect x="90" y="90" width="260" height="180"/>
+    <rect x="380" y="90" width="330" height="180"/>
+    <rect x="90" y="300" width="620" height="210"/>
+  </g>
+  <text x="48" y="550" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">Meridian Studio</text>
+  <text x="48" y="586" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Layout System — Detail</text>
+</svg>
