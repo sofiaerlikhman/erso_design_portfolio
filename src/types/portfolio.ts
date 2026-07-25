@@ -123,7 +123,6 @@ export interface ProjectItem {
   id: string;
   title: string;
   client: string;
-  year: string;
   categoryTags: string[];
   description: string;
   liveUrl?: string;

@@ -301,54 +301,49 @@ company: "Freelance & Pro Bono Work",
   // type in src/types/portfolio.ts for what every field does.
   projects: [
     {
-  id: "children-of-the-sun",
-  title: "Children of the Sun",
-  client: "Kharkiv charitable organization Children of the Sun",
-  year: "2021",
-  categoryTags: ["Brand Identity", "Packaging", "Print & Merchandise"],
-  description:
-    "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
-  images: [detiSolntsaPackaging, detiSolntsaPoster, detiSolntsaCertificate],
+      id: "dobrova-brand",
+      title: "DOBROVA Brand",
+      client: "DOBROVA",
+      categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
+      description:
+        "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
+      images: [dobrovaMultiDevice, dobrovaMobileMockup, dobrovaDesktopMockup],
+    },
+    {
+      id: "children-of-the-sun",
+      title: "Children of the Sun",
+      client: "Kharkiv charitable organization Children of the Sun",
+      categoryTags: ["Brand Identity", "Packaging", "Print & Merchandise"],
+      description:
+        "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
+      images: [detiSolntsaCertificate, detiSolntsaPackaging, detiSolntsaPoster],
+    },
+    {
+      id: "mate-champagner",
+      title: "Mate & Champagner",
+      client: "City of Wiesbaden",
+      categoryTags: ["UX Architecture", "Web Platform", "Design System"],
+      description:
+        "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
+      images: [mateChampagnerLaptop, mateChampagnerMockup, mateChampagnerUserFlow],
     },
     {
       id: "zooniam-concept",
-  title: "Zooniam",
-  client: "Concept Project",
-      year: "2024",
-  categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
-  description:
-    "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
-  images: [zooniamPackaging, zooniamSocial, zooniamTotes],
-    },
-    {
-      id: "dobrova-brand",
-  title: "DOBROVA Brand",
-  client: "DOBROVA",
-      year: "2026",
-  categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
-  description:
-    "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
-  images: [dobrovaMobileMockup, dobrovaDesktopMockup, dobrovaMultiDevice],
+      title: "Zooniam",
+      client: "Concept Project",
+      categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
+      description:
+        "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
+      images: [zooniamTotes, zooniamPackaging, zooniamSocial],
     },
     {
       id: "ukraine-museum-app",
-  title: "Ukrainian Art Museum App",
-  client: "Concept Project",
-      year: "2023",
-  categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
-  description:
-    "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
-  images: [museumAppShowcase, museumWireframes, museumAppInHand],
-    },
-    {
-     id: "mate-champagner",
-  title: "Mate & Champagner",
-  client: "City of Wiesbaden",
-      year: "2022",
-  categoryTags: ["UX Architecture", "Web Platform", "Design System"],
-  description:
-    "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
-  images: [mateChampagnerMockup, mateChampagnerUserFlow, mateChampagnerLaptop],
+      title: "Ukrainian Art Museum App",
+      client: "Concept Project",
+      categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
+      description:
+        "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
+      images: [museumAppInHand, museumAppShowcase, museumWireframes],
     },
   ],
 

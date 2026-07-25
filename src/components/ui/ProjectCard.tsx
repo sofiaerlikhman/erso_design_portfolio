@@ -1,6 +1,6 @@
 // ProjectCard.tsx: The full content shown inside one sticky-stacking
 // project card in the Selected Projects section — tags, title,
-// description, client/year/link info, and the project's images. The
+// description, client/link info, and the project's images. The
 // sticking/shrinking scroll behavior itself is handled by the parent
 // StickyStackCard.tsx; this file is purely "what goes inside the card."
 import { ArrowUpRight } from "lucide-react";
@@ -58,7 +58,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="flex shrink-0 flex-col items-start gap-3 font-body text-sm text-text-light/60 sm:items-end sm:text-right">
           <div>{project.client}</div>
-          <div>{project.year}</div>
           {externalLink && (
             <a
               href={externalLink.href}

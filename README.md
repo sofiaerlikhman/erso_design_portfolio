@@ -42,7 +42,6 @@ editor will flag anything missing.
   id: "your-project-slug",
   title: "Project Name",
   client: "Client Name",
-  year: "2026",
   categoryTags: ["Brand", "Web"],
   description: "One or two sentences about the project.",
   liveUrl: "https://example.com",       // optional

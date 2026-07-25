@@ -1,9 +1,10 @@
-// Hero.tsx: The very first thing a visitor sees — the full-height
-// introduction screen with the big "DESIGN & DIRECTION" headline, the
-// glowing background, the availability badge, and the two main call-to-
-// action buttons.
+// Hero.tsx: The very first thing a visitor sees — a minimal, full-height
+// introduction screen with the big "DESIGN & DIRECTION" headline, a
+// slowly-drifting abstract gradient background, the availability badge,
+// and the two main call-to-action buttons.
 import { Badge } from "../ui/Badge";
 import { MagneticButton } from "../ui/MagneticButton";
+import { AnimatedGradient } from "../motion/AnimatedGradient";
 import { SectionEyebrow } from "../common/SectionEyebrow";
 import { portfolioData } from "../../data/portfolioData";
 import { withBase } from "../../lib/withBase";
@@ -19,16 +20,7 @@ export function Hero() {
       id="top"
       className="relative flex min-h-screen flex-col justify-end overflow-hidden bg-bg-dark px-6 pb-10 pt-32 sm:px-10 sm:pb-14"
     >
-      {/* Ambient glassmorphic / mesh backdrop — two large soft-edged
-          colored circles (radial gradients) plus a semi-transparent dark
-          overlay on top, giving the moody glowing-fog look behind the
-          headline text. Purely decorative, so pointer-events-none keeps
-          it from blocking clicks on anything behind it. */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-1/3 left-1/4 h-[60vh] w-[60vh] rounded-full bg-[radial-gradient(circle,_rgba(138,148,160,0.35)_0%,_transparent_70%)] blur-3xl" />
-        <div className="absolute -bottom-1/4 right-0 h-[50vh] w-[50vh] rounded-full bg-[radial-gradient(circle,_rgba(226,236,243,0.18)_0%,_transparent_70%)] blur-3xl" />
-        <div className="absolute inset-0 bg-bg-dark/40" />
-      </div>
+      <AnimatedGradient />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionEyebrow>{hero.eyebrow}</SectionEyebrow>
