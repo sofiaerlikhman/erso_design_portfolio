@@ -20,17 +20,21 @@ interface Blob {
 
 const BLOBS: Blob[] = [
   // Metallic gray-blue (matches the site's metallic gradient accent)
-  { position: "-top-1/4 left-[12%]", size: "h-[55vh] w-[55vh]", color: "rgba(138,148,160,0.35)", duration: 22 },
+  { position: "-top-1/4 left-[12%]", size: "h-[60vh] w-[60vh]", color: "rgba(138,148,160,0.85)", duration: 22 },
   // Pale ice blue (the lighter end of that same metallic gradient)
-  { position: "top-1/3 -right-[5%]", size: "h-[45vh] w-[45vh]", color: "rgba(226,236,243,0.22)", duration: 27 },
+  { position: "top-1/4 -right-[5%]", size: "h-[55vh] w-[55vh]", color: "rgba(226,236,243,0.75)", duration: 27 },
   // Warm cream/tan (the site's divider color), for a soft warm-cool contrast
-  { position: "-bottom-1/4 left-1/3", size: "h-[50vh] w-[50vh]", color: "rgba(217,196,170,0.18)", duration: 32 },
+  { position: "-bottom-1/4 left-1/4", size: "h-[55vh] w-[55vh]", color: "rgba(217,196,170,0.7)", duration: 32 },
 ];
 
 /**
  * Fills its positioned parent with three blurred, slowly-drifting radial
- * gradients plus a dark wash on top (so text placed after this in the DOM
- * stays legible). Motion is skipped entirely when the visitor has "reduce
+ * gradients, blended with `mix-blend-mode: screen` so they glow against
+ * the section's near-black background instead of just sitting on top of
+ * it as a faint translucent layer — plain alpha-over compositing at these
+ * blur levels reads as almost nothing against near-black; screen blending
+ * is the standard fix, and it's also why colors visibly mix where two
+ * blobs overlap. Motion is skipped entirely when the visitor has "reduce
  * motion" turned on — the blobs just sit still in their resting position.
  */
 export function AnimatedGradient() {
@@ -41,7 +45,7 @@ export function AnimatedGradient() {
       {BLOBS.map((blob) => (
         <motion.div
           key={blob.position}
-          className={`absolute rounded-full blur-3xl ${blob.position} ${blob.size}`}
+          className={`absolute rounded-full blur-3xl mix-blend-screen ${blob.position} ${blob.size}`}
           style={{ background: `radial-gradient(circle, ${blob.color} 0%, transparent 70%)` }}
           // Each blob drifts a little to one side, then the other, while
           // gently growing and shrinking — a loose, organic wander rather
@@ -54,7 +58,6 @@ export function AnimatedGradient() {
           transition={{ duration: blob.duration, repeat: Infinity, ease: "easeInOut" }}
         />
       ))}
-      <div className="absolute inset-0 bg-bg-dark/40" />
     </div>
   );
 }
