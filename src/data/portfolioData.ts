@@ -190,7 +190,7 @@ company: "Freelance & Pro Bono Work",
     {
       id: "exp-4",
       role: "Designer & SMM Specialist (Pro Bono)",
-      company: "Kharkiv charitable organization of parents of children with chromosomal abnormalities and doctors of genetics Children of the Sun",
+      company: "Kharkiv charitable organization Children of the Sun",
       period: "2020 — 2022",
       description:
       "Delivered pro bono visual design and social media management for a regional non-profit supporting children with chromosomal conditions and their families in Kharkiv.",
@@ -316,7 +316,7 @@ company: "Freelance & Pro Bono Work",
       categoryTags: ["Brand Identity", "Packaging", "Print & Merchandise"],
       description:
         "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
-      images: [detiSolntsaCertificate, detiSolntsaPackaging, detiSolntsaPoster],
+      images: [detiSolntsaPoster, detiSolntsaPackaging, detiSolntsaCertificate],
     },
     {
       id: "mate-champagner",
@@ -334,11 +334,11 @@ company: "Freelance & Pro Bono Work",
       categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
       description:
         "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
-      images: [zooniamTotes, zooniamPackaging, zooniamSocial],
+      images: [zooniamSocial, zooniamPackaging, zooniamTotes],
     },
     {
       id: "ukraine-museum-app",
-      title: "Ukrainian Art Museum App",
+      title: "Ukrainian Art Museum",
       client: "Concept Project",
       categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
       description:
