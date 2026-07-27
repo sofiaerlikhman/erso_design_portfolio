@@ -94,8 +94,8 @@ it, headlines render in **Playfair Display** (loaded from Google Fonts in
 `index.html`) as a close, free stand-in, so the site looks right out of the
 box.
 
-To use the real font: add your licensed `.woff2` file at
-`public/fonts/Abygaer/Abygaer-Regular.woff2` — see
+To use the real font: add your licensed `.ttf` file at
+`public/fonts/Abygaer/Abygaer-Regular.ttf` — see
 [`public/fonts/Abygaer/README.md`](public/fonts/Abygaer/README.md). It's
 picked up automatically by the `@font-face` rule already in
 `src/index.css`. No other files need to change.

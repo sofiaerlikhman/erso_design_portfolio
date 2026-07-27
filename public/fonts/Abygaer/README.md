@@ -3,10 +3,10 @@
 `src/index.css` already points at:
 
 ```
-/fonts/Abygaer/Abygaer-Regular.woff2
+/fonts/Abygaer/Abygaer-Regular.ttf
 ```
 
-Add your licensed `.woff2` file with that exact name (right in this folder)
+Add your licensed `.ttf` file with that exact name (right in this folder)
 and it will load automatically — no other change needed, and it'll resolve
 correctly whether you deploy to a GitHub Pages subpath, a custom domain, or
 `localhost`.
