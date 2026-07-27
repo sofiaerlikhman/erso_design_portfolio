@@ -55,7 +55,11 @@ export function Hero() {
           src={hero.heroImage}
           alt={`Portrait of ${meta.name}`}
           loading="eager"
-          className="h-[68%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
+          // -translate-y shifts the image up without touching its own
+          // size (unlike padding on the flex container, which would
+          // also perturb the h-[68%] height calculation) — mobile-only,
+          // cancelled out from md: up where the position is already right.
+          className="h-[68%] w-auto -translate-y-[16%] object-contain object-bottom md:h-[40%] md:translate-y-0 lg:h-[82%]"
           style={{ maskImage: BOTTOM_FADE_MASK, WebkitMaskImage: BOTTOM_FADE_MASK }}
         />
       </div>
