@@ -31,11 +31,11 @@ export function About() {
           />
         )}
 
+        {/* No max-width here on purpose — it shares the lead paragraph's
+            width (both are only constrained by the max-w-4xl wrapper
+            above) instead of running narrower than it. */}
         {rest.map((paragraph) => (
-          <p
-            key={paragraph}
-            className="mt-6 max-w-2xl font-body text-base text-text-dark/70 sm:text-lg"
-          >
+          <p key={paragraph} className="mt-6 font-body text-base text-text-dark/70 sm:text-lg">
             {paragraph}
           </p>
         ))}
