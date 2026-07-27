@@ -12,6 +12,12 @@ import type { PortfolioData } from "../types/portfolio";
 // time. Replace any of these imports with your own files (drop them in
 // src/assets/images/ and update the import path + the reference below) —
 // nothing else in the codebase needs to change.
+// Hero portrait — a transparent-background cutout shown behind the
+// headline (see Hero.tsx). To swap it for a different photo later, use
+// the same background-removed approach and drop the file in
+// src/assets/images/, then point this import at it.
+import heroPortrait from "../assets/images/heroPortrait.png";
+
 // 1. Children of the Sun
 import detiSolntsaPackaging from "../assets/images/detiSolntsaPackaging.webp";
 import detiSolntsaPoster from "../assets/images/detiSolntsaPoster.webp";
@@ -92,6 +98,7 @@ export const portfolioData: PortfolioData = {
     accentPhrase: "Sofia Erlikhman",
     ctaLabel: "Download Resume",
     ctaUrl: "resume.pdf",
+    heroImage: heroPortrait,
   },
 
   // Read by: MarqueeStrip (the row of small scrolling preview cards just
@@ -256,16 +263,17 @@ company: "Freelance & Pro Bono Work",
     { name: "French", level: "Fluent" },
   ],
 
-  // Read by: ServicesResume (the "01 / 02 / 03" numbered service blocks
-  // near the bottom of that section — the number itself is generated
-  // automatically from each entry's position in this list, so you don't
-  // need to keep a "number" field in sync by hand when reordering).
+  // Read by: ServicesResume (the "01 / 02 / 03 / 04" numbered service
+  // blocks near the bottom of that section — the number itself is
+  // generated automatically from each entry's position in this list, so
+  // you don't need to keep a "number" field in sync by hand when
+  // reordering).
      services: [
        {
          id: "svc-1",
-         title: "Brand Identity & Print",
+         title: "Brand and Corporate Design",
          description:
-           "Logo design, brand strategy, physical packaging and print collateral that establish a strong physical presence.",
+           "Logo design, visual identity systems, and brand strategy that give a company a clear, consistent presence everywhere it shows up.",
        },
        {
          id: "svc-2",
@@ -278,6 +286,12 @@ company: "Freelance & Pro Bono Work",
          title: "AI Media & Content Production",
          description:
            "Custom AI image pipelines, short-form promotional videos, and multi-format social content for ongoing marketing.",
+       },
+       {
+         id: "svc-4",
+         title: "Print and Packaging Design",
+         description:
+           "Physical packaging, print collateral, and production-ready files that hold up from a business card to a shipping box.",
        },
      ],
 

@@ -130,7 +130,13 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
             dragConstraints={DRAG_CONSTRAINTS}
             dragElastic={0.2}
             onDragEnd={handleDragEnd}
-            className="absolute inset-0"
+            // touch-pan-y (touch-action: pan-y) tells the browser it can
+            // still handle vertical swipes itself (i.e. scroll the page)
+            // instead of treating every touch here as a potential drag —
+            // without it, a visitor trying to scroll past this carousel
+            // finds their swipe gets captured for the horizontal
+            // next/previous gesture instead, making the page feel stuck.
+            className="absolute inset-0 touch-pan-y"
           >
             <FallbackImage
               src={images[index]}

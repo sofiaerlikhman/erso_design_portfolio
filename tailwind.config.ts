@@ -23,5 +23,14 @@ export default {
       },
     },
   },
+  // Makes every hover: / group-hover: utility apply only on inputs that
+  // can actually hover (a mouse/trackpad), instead of a plain CSS
+  // :hover — without this, tapping a touchscreen "hovers" an element and
+  // it stays visually stuck in its hover state (scaled up, recolored,
+  // nudged) until the visitor taps somewhere else, which reads as the
+  // whole site glitching on every touch.
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   plugins: [],
 } satisfies Config;

@@ -28,12 +28,15 @@ interface MarqueeRowProps<T> {
 
 // One row of the marquee (there are two — see ScrollMarquee below).
 function MarqueeRow<T>({ items, direction, progress, disabled, renderItem, keyExtractor }: MarqueeRowProps<T>) {
-  // Track is tripled (not just doubled) so the translated range — one full
-  // "set" width — never runs out of content before the loop point, even on
-  // ultra-wide viewports where a couple of duplicated cards might not add
-  // up to the full screen width.
+  // Track is tripled (not just doubled) so the translated range — up to
+  // one full "set" width — never runs out of content before the loop
+  // point, even on ultra-wide viewports where a couple of duplicated
+  // cards might not add up to the full screen width. The row only
+  // travels a third of that (one sixth of the tripled track) over the
+  // full scroll range, which is what keeps the sweep feeling slow and
+  // deliberate rather than racing past.
   const range: [string, string] =
-    direction === "right" ? ["-33.3333%", "0%"] : ["0%", "-33.3333%"];
+    direction === "right" ? ["-16.6667%", "0%"] : ["0%", "-16.6667%"];
   // x is this row's horizontal position, mapped directly from the
   // shared scroll progress (0 to 1) onto the percentage range above —
   // as progress increases while scrolling, x slides smoothly across

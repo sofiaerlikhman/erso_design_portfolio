@@ -3,7 +3,7 @@
 // "broken image" icon if the picture fails to load — e.g. if someone
 // edits portfolioData.ts and points at an image file that doesn't
 // actually exist. Used everywhere a project or marquee image is shown.
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { ImageOff } from "lucide-react";
 import { cn } from "../../lib/cn";
 
@@ -12,6 +12,10 @@ interface FallbackImageProps {
   alt: string;
   className?: string;
   loading?: "lazy" | "eager";
+  /** Escape hatch for styles Tailwind classes can't express cleanly,
+   *  e.g. a cross-browser mask-image gradient (needs both the
+   *  standard and -webkit- prefixed property set together). */
+  style?: CSSProperties;
 }
 
 /**
@@ -19,7 +23,7 @@ interface FallbackImageProps {
  * icon if the source 404s (e.g. a project image path in portfolioData.ts
  * points at a file that was renamed or deleted).
  */
-export function FallbackImage({ src, alt, className, loading = "lazy" }: FallbackImageProps) {
+export function FallbackImage({ src, alt, className, loading = "lazy", style }: FallbackImageProps) {
   // Starts as false (assume the image will load fine). Gets flipped to
   // true only if the browser reports the image failed to load — see
   // the onError handler on the <img> tag below.
@@ -51,6 +55,7 @@ export function FallbackImage({ src, alt, className, loading = "lazy" }: Fallbac
       decoding="async"
       onError={() => setErrored(true)}
       className={className}
+      style={style}
     />
   );
 }

@@ -57,6 +57,12 @@ export interface HeroContent {
   accentPhrase: string;
   ctaLabel: string;
   ctaUrl: string;
+  /** Portrait shown in the hero background. Expected to be a photo with
+   *  the background removed (a transparent PNG/WebP cutout) — the hero
+   *  displays it uncropped (object-contain) and fades its bottom edge
+   *  into the section, so a photo with a solid background would show up
+   *  as an ugly rectangle instead of blending into the scene. */
+  heroImage: string;
 }
 
 // One small preview card in the horizontally-scrolling marquee ribbon

@@ -1,13 +1,22 @@
-// Hero.tsx: The very first thing a visitor sees — a minimal, full-height
+// Hero.tsx: The very first thing a visitor sees — the full-height
 // introduction screen with the big "DESIGN & DIRECTION" headline, a
-// slowly-drifting abstract gradient background, the availability badge,
-// and the two main call-to-action buttons.
+// slowly-drifting abstract gradient, a portrait photo layered into the
+// background, the availability badge, and the two main call-to-action
+// buttons.
 import { Badge } from "../ui/Badge";
 import { MagneticButton } from "../ui/MagneticButton";
+import { FallbackImage } from "../ui/FallbackImage";
 import { AnimatedGradient } from "../motion/AnimatedGradient";
 import { SectionEyebrow } from "../common/SectionEyebrow";
 import { portfolioData } from "../../data/portfolioData";
 import { withBase } from "../../lib/withBase";
+
+// Fades the bottom ~22% of the portrait to transparent, so it dissolves
+// into the section instead of ending in a hard edge. Written once here
+// (as both the standard and -webkit- prefixed forms Safari needs) rather
+// than inline on the element, since both prefixes always need to change
+// together.
+const BOTTOM_FADE_MASK = "linear-gradient(to top, transparent 0%, black 22%)";
 
 export function Hero() {
   // hero: the headline text/links for this section (see the
@@ -22,24 +31,57 @@ export function Hero() {
     >
       <AnimatedGradient />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <SectionEyebrow>{hero.eyebrow}</SectionEyebrow>
+      {/* Portrait, positioned as part of the background (behind the
+          text below). Centered on phones; from md: up (768px — real
+          tablets, not just a wide phone) it moves to the right with
+          some breathing room from the edge rather than sitting flush
+          against it or dead-center — a rough "rule of thirds" placement
+          instead of a mechanically centered one. Sized narrower at
+          md: than at lg: specifically so it never runs into the text
+          column at in-between tablet widths, where there's less room
+          to share than on a full desktop viewport. object-contain (not
+          object-cover) is what makes this work with a transparent
+          cutout: cropping would slice off the transparent edges instead
+          of showing the whole photo. */}
+      <div className="pointer-events-none absolute inset-0 z-[1] flex items-end justify-center md:justify-end md:pr-[6%] lg:pr-[9%]">
+        <FallbackImage
+          src={hero.heroImage}
+          alt={`Portrait of ${meta.name}`}
+          loading="eager"
+          className="h-[52%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
+          style={{ maskImage: BOTTOM_FADE_MASK, WebkitMaskImage: BOTTOM_FADE_MASK }}
+        />
+      </div>
 
-        <h1 className="clamp-hero mt-6 font-display leading-[0.95] text-text-light">
-          {/* Each line of the headline (e.g. "DESIGN &" and "DIRECTION")
-              is its own array entry in portfolioData.ts, so it always
-              breaks onto a new line exactly where intended. */}
-          {hero.titleLines.map((line) => (
-            <span key={line} className="block">
-              {line}
+      {/* A bottom-heavy dark scrim sitting on top of the portrait but
+          still behind the text — this is the safety net that keeps the
+          headline readable no matter how light the photo is (this one
+          is a bright, white-toned shot). Since the text block is
+          bottom-anchored (see justify-end on the section above) and the
+          portrait is too, darkening the bottom protects exactly the
+          zone they'd otherwise compete in. */}
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-bg-dark via-bg-dark/70 to-transparent" />
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
+        <div className="md:max-w-sm lg:max-w-xl">
+          <SectionEyebrow>{hero.eyebrow}</SectionEyebrow>
+
+          <h1 className="clamp-hero mt-6 font-display leading-[0.95] text-text-light">
+            {/* Each line of the headline (e.g. "DESIGN &" and "DIRECTION")
+                is its own array entry in portfolioData.ts, so it always
+                breaks onto a new line exactly where intended. */}
+            {hero.titleLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+            {/* The smaller italic accent phrase ("crafted with intent"),
+                styled with the metallic gradient text effect. */}
+            <span className="text-metallic block font-display text-[0.45em] italic">
+              {hero.accentPhrase}
             </span>
-          ))}
-          {/* The smaller italic accent phrase ("crafted with intent"),
-              styled with the metallic gradient text effect. */}
-          <span className="text-metallic block font-display text-[0.45em] italic">
-            {hero.accentPhrase}
-          </span>
-        </h1>
+          </h1>
+        </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <Badge dot>{meta.availability}</Badge>
