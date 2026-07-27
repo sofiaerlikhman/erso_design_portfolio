@@ -36,26 +36,37 @@ export function Hero() {
           it, and the headline is allowed to sit partly behind it rather
           than being protected by a dark scrim. pointer-events-none keeps
           the photo from blocking clicks on the CTA buttons underneath
-          wherever the two overlap. Centered on phones; from md: up
-          (768px — real tablets, not just a wide phone) it moves to the
-          right with some breathing room from the edge rather than
-          sitting flush against it or dead-center — a rough "rule of
-          thirds" placement instead of a mechanically centered one.
-          object-contain (not object-cover) is what makes this work with
-          a transparent cutout: cropping would slice off the transparent
-          edges instead of showing the whole photo. Only the bottom edge
-          fades out (via the mask below) so it dissolves into the
-          section instead of ending in a hard line — the top (the face)
-          is left completely untouched on purpose. */}
+          wherever the two overlap. On phones it's sized tall (85% of the
+          section) so the face sits up near the navbar rather than low on
+          the screen; from md: up (768px — real tablets, not just a wide
+          phone) it switches to a shorter size on the right side instead,
+          with some breathing room from the edge rather than sitting
+          flush against it or dead-center — a rough "rule of thirds"
+          placement instead of a mechanically centered one. object-contain
+          (not object-cover) is what makes this work with a transparent
+          cutout: cropping would slice off the transparent edges instead
+          of showing the whole photo. Only the bottom edge fades out (via
+          the mask below) so it dissolves into the section instead of
+          ending in a hard line — the top (the face) is left completely
+          untouched on purpose. */}
       <div className="pointer-events-none absolute inset-0 z-20 flex items-end justify-center md:justify-end md:pr-[6%] lg:pr-[9%]">
         <FallbackImage
           src={hero.heroImage}
           alt={`Portrait of ${meta.name}`}
           loading="eager"
-          className="h-[52%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
+          className="h-[85%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
           style={{ maskImage: BOTTOM_FADE_MASK, WebkitMaskImage: BOTTOM_FADE_MASK }}
         />
       </div>
+
+      {/* A short, strong dark scrim sitting ABOVE the portrait (z-30) —
+          unlike the old full-height scrim this doesn't touch the face at
+          all (it's height-limited to the bottom slice of the section,
+          not a gradient across the whole thing), but where it does
+          apply, it's dark enough that the CTA badge/buttons stay legible
+          against the photo instead of nearly disappearing into a light
+          part of it. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-[38%] bg-gradient-to-t from-bg-dark via-bg-dark/90 to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionEyebrow>{hero.eyebrow}</SectionEyebrow>

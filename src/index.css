@@ -32,6 +32,33 @@
   font-display: swap;
 }
 
+/*
+ * Marquee auto-loop keyframes (mobile/tablet — see ScrollMarquee.tsx).
+ * Defined as plain CSS animations, not a Framer Motion animate prop,
+ * specifically so the browser's own compositor drives the movement
+ * instead of JavaScript recalculating a transform every frame — the
+ * JS-driven version visibly stuttered on mobile with this many moving
+ * cards. -33.3334% is one third of the row's tripled (3x-duplicated)
+ * content, so the loop point lines up exactly with a repeat of the same
+ * cards and the jump back to the start is invisible.
+ */
+@keyframes marquee-loop-right {
+  from {
+    transform: translateX(-33.3334%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes marquee-loop-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-33.3334%);
+  }
+}
+
 /* @layer base holds default styling applied broadly across the whole
    page, rather than one-off utility classes used in specific spots. */
 @layer base {
@@ -99,6 +126,16 @@
       black 92%,
       transparent
     );
+  }
+
+  /* Applies the keyframes above — 22s for one full pass, matching the
+     duration the old Framer Motion version used, just now running as a
+     native CSS animation instead of a JS-driven one. */
+  .animate-marquee-right {
+    animation: marquee-loop-right 22s linear infinite;
+  }
+  .animate-marquee-left {
+    animation: marquee-loop-left 22s linear infinite;
   }
 
   .clamp-hero {

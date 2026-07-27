@@ -12,6 +12,7 @@
 import { useMemo, useRef, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useMediaQuery } from "../../lib/useMediaQuery";
+import { cn } from "../../lib/cn";
 
 interface MarqueeRowProps<T> {
   items: T[];
@@ -33,13 +34,6 @@ interface MarqueeRowProps<T> {
   keyExtractor: (item: T, index: number) => string;
 }
 
-// How long one full pass across the tripled track takes in auto-loop
-// mode (mobile/tablet). Scroll-linked mode (desktop) has no fixed
-// duration of its own — its speed is simply however fast the visitor
-// scrolls.
-const AUTO_LOOP_DURATION = 22;
-const AUTO_LOOP_TRANSITION = { duration: AUTO_LOOP_DURATION, repeat: Infinity, ease: "linear" } as const;
-
 // One row of the marquee (there are two — see ScrollMarquee below).
 function MarqueeRow<T>({ items, direction, progress, disabled, autoLoop, renderItem, keyExtractor }: MarqueeRowProps<T>) {
   // Track is tripled (not just doubled) so the translated range — up to
@@ -57,38 +51,36 @@ function MarqueeRow<T>({ items, direction, progress, disabled, autoLoop, renderI
     direction === "right" ? ["-16.6667%", "0%"] : ["0%", "-16.6667%"];
   const scrollX = useTransform(progress, [0, 1], disabled ? ["0%", "0%"] : scrollRange);
 
-  // Auto-loop range (mobile/tablet): a full "set" of the tripled track
-  // (33.3333%) — repeating that exact distance is what makes the loop
-  // invisible, since the duplicated content one set over looks
-  // identical to the start, so the jump back at the end of each cycle
-  // is imperceptible.
-  const loopRange: [string, string] =
-    direction === "right" ? ["-33.3333%", "0%"] : ["0%", "-33.3333%"];
-
   const track = tripled.map((item, i) => (
     <div key={`${keyExtractor(item, i)}-${i}`} className="shrink-0">
       {renderItem(item, i)}
     </div>
   ));
 
+  // marquee-fade (defined in index.css) fades the row's edges to
+  // transparent, so cards don't appear to cut off abruptly at the
+  // screen edge.
+  if (autoLoop) {
+    // A plain CSS animation (marquee-loop-right/left, defined in
+    // index.css) rather than a Framer Motion animate prop — handing
+    // continuous, never-stopping movement off to the browser's own
+    // compositor is what keeps it smooth on mobile, where a transform
+    // recalculated in JS every single frame visibly stuttered under
+    // load. Skipped entirely (falls back to a static row) under
+    // prefers-reduced-motion.
+    const loopClass = direction === "right" ? "animate-marquee-right" : "animate-marquee-left";
+    return (
+      <div className="marquee-fade overflow-hidden">
+        <div className={cn("flex w-max gap-6 py-3", !disabled && loopClass)}>{track}</div>
+      </div>
+    );
+  }
+
   return (
-    // marquee-fade (defined in index.css) fades the row's edges to
-    // transparent, so cards don't appear to cut off abruptly at the
-    // screen edge.
     <div className="marquee-fade overflow-hidden">
-      {autoLoop ? (
-        <motion.div
-          animate={disabled ? undefined : { x: loopRange }}
-          transition={AUTO_LOOP_TRANSITION}
-          className="flex w-max gap-6 py-3"
-        >
-          {track}
-        </motion.div>
-      ) : (
-        <motion.div style={{ x: scrollX }} className="flex w-max gap-6 py-3">
-          {track}
-        </motion.div>
-      )}
+      <motion.div style={{ x: scrollX }} className="flex w-max gap-6 py-3">
+        {track}
+      </motion.div>
     </div>
   );
 }
