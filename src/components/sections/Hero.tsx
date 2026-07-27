@@ -1,8 +1,10 @@
 // Hero.tsx: The very first thing a visitor sees — the full-height
 // introduction screen with the big "DESIGN & DIRECTION" headline, a
-// slowly-drifting abstract gradient, a portrait photo layered in front
-// of everything else, the availability badge, and the two main
-// call-to-action buttons.
+// slowly-drifting abstract gradient, a portrait photo layered into the
+// background behind everything, the availability badge, and the two
+// main call-to-action buttons. Layer order, back to front: dark
+// background -> gradient blobs -> portrait -> protective scrim ->
+// text/buttons on top, always fully legible and clickable.
 import { Badge } from "../ui/Badge";
 import { MagneticButton } from "../ui/MagneticButton";
 import { FallbackImage } from "../ui/FallbackImage";
@@ -31,42 +33,40 @@ export function Hero() {
     >
       <AnimatedGradient />
 
-      {/* Portrait, layered in FRONT of the text (z-20 vs. the text
-          block's z-10) — the face stays fully bright since nothing dims
-          it, and the headline is allowed to sit partly behind it rather
-          than being protected by a dark scrim. pointer-events-none keeps
-          the photo from blocking clicks on the CTA buttons underneath
-          wherever the two overlap. On phones it's sized tall (85% of the
-          section) so the face sits up near the navbar rather than low on
-          the screen; from md: up (768px — real tablets, not just a wide
-          phone) it switches to a shorter size on the right side instead,
-          with some breathing room from the edge rather than sitting
-          flush against it or dead-center — a rough "rule of thirds"
-          placement instead of a mechanically centered one. object-contain
-          (not object-cover) is what makes this work with a transparent
-          cutout: cropping would slice off the transparent edges instead
-          of showing the whole photo. Only the bottom edge fades out (via
-          the mask below) so it dissolves into the section instead of
-          ending in a hard line — the top (the face) is left completely
-          untouched on purpose. */}
-      <div className="pointer-events-none absolute inset-0 z-20 flex items-end justify-center md:justify-end md:pr-[6%] lg:pr-[9%]">
+      {/* Portrait, sitting BEHIND the text (z-[1], well under the text
+          block's z-10) — text and buttons must always render on top,
+          fully readable and clickable, with the photo as a backdrop
+          rather than something laid over the page's actual content.
+          pointer-events-none means it can never intercept clicks even
+          though it's visually behind everything anyway. On phones it's
+          sized tall-ish (68% of the section) so the face sits up near
+          the navbar rather than low on the screen; from md: up (768px —
+          real tablets, not just a wide phone) it switches to a shorter
+          size on the right side instead, with some breathing room from
+          the edge rather than sitting flush against it or dead-center —
+          a rough "rule of thirds" placement instead of a mechanically
+          centered one. object-contain (not object-cover) is what makes
+          this work with a transparent cutout: cropping would slice off
+          the transparent edges instead of showing the whole photo. Only
+          the bottom edge fades out (via the mask below) so it dissolves
+          into the section instead of ending in a hard line. */}
+      <div className="pointer-events-none absolute inset-0 z-[1] flex items-end justify-center md:justify-end md:pr-[6%] lg:pr-[9%]">
         <FallbackImage
           src={hero.heroImage}
           alt={`Portrait of ${meta.name}`}
           loading="eager"
-          className="h-[85%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
+          className="h-[68%] w-auto object-contain object-bottom md:h-[40%] lg:h-[82%]"
           style={{ maskImage: BOTTOM_FADE_MASK, WebkitMaskImage: BOTTOM_FADE_MASK }}
         />
       </div>
 
-      {/* A short, strong dark scrim sitting ABOVE the portrait (z-30) —
-          unlike the old full-height scrim this doesn't touch the face at
-          all (it's height-limited to the bottom slice of the section,
-          not a gradient across the whole thing), but where it does
-          apply, it's dark enough that the CTA badge/buttons stay legible
-          against the photo instead of nearly disappearing into a light
-          part of it. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-[38%] bg-gradient-to-t from-bg-dark via-bg-dark/90 to-transparent" />
+      {/* Protective scrim, sitting between the portrait (z-[1]) and the
+          text (z-10) — this is what keeps the headline (plain colored
+          glyphs with no background of their own) readable over a photo
+          this light, without needing to avoid overlapping it. Strongest
+          at the very bottom and fully gone by the halfway point, so it
+          never reaches up into the face. */}
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-bg-dark from-0% via-bg-dark/80 via-25% to-transparent to-50%" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionEyebrow>{hero.eyebrow}</SectionEyebrow>
