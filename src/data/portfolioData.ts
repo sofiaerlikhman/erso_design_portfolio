@@ -16,7 +16,7 @@ import type { PortfolioData } from "../types/portfolio";
 // headline (see Hero.tsx). To swap it for a different photo later, use
 // the same background-removed approach and drop the file in
 // src/assets/images/, then point this import at it.
-import heroPortrait from "../assets/images/heroPortrait.png";
+import heroPortrait from "../assets/images/heroPortrait.webp";
 
 // 1. Children of the Sun
 import detiSolntsaPackaging from "../assets/images/detiSolntsaPackaging.webp";
