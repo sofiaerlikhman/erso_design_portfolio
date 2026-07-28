@@ -104,15 +104,15 @@ export const portfolioData: PortfolioData = {
   // Read by: MarqueeStrip (the row of small scrolling preview cards just
   // under the Hero).
   marquee: [
+  { id: "vscode", label: "VS Code", tag: "Front-End Development", image: vscode },
+  { id: "cinema4d", label: "Cinema 4D", tag: "3D & Motion Graphics", image: cinema4d },
+  { id: "canva", label: "Canva", tag: "Rapid Content Creation", image: canva },
   { id: "figma", label: "Figma", tag: "UI/UX & Prototyping", image: figma },
   { id: "adobe", label: "Adobe Creative Cloud", tag: "Brand & Graphic Design", image: adobe },
   { id: "higgsfield", label: "Higgsfield AI", tag: "AI Video & Motion Generation", image: higgsfield },
   { id: "topview", label: "TopView AI", tag: "AI Video Editing & Content", image: topview },
   { id: "wordpress", label: "WordPress", tag: "Web Design & CMS", image: wordpress },
   { id: "wix", label: "Wix Studio", tag: "Web Design & Layout", image: wix },
-  { id: "vscode", label: "VS Code", tag: "Front-End Development", image: vscode },
-  { id: "cinema4d", label: "Cinema 4D", tag: "3D & Motion Graphics", image: cinema4d },
-  { id: "canva", label: "Canva", tag: "Rapid Content Creation", image: canva },
   { id: "fontlab", label: "FontLab", tag: "Typography", image: fontlab },
   ],
 
@@ -128,7 +128,7 @@ export const portfolioData: PortfolioData = {
       stats: [
       { label: "Years of Experience", value: "3+" },
        { label: "Core Disciplines", value: "4" },
-      { label: "Client Partners", value: "11" },
+      { label: "Clients", value: "11" },
      ],
   },
 
