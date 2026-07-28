@@ -3,7 +3,7 @@
 // appearing instantly. Used for the "Years of Experience / Shipped
 // Products / Client Partners" numbers in the About section (see
 // StatBlock.tsx, which wraps this).
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { animate, useInView, useReducedMotion } from "framer-motion";
 
 interface AnimatedCounterProps {
@@ -58,38 +58,49 @@ export function AnimatedCounter({ value, className }: AnimatedCounterProps) {
 
   const shouldReduceMotion = useReducedMotion();
 
-  // The number currently being shown on screen, ticking up from 0 to
-  // `target` while the animation plays. This lives in ordinary React
-  // state (rather than a Framer Motion "motion value") because we need
-  // to display it as literal text content, not as a CSS style.
-  const [display, setDisplay] = useState(0);
+  // A reference to just the <span> holding the digits, so the ticking
+  // number can be written straight into the DOM (see below).
+  const numberRef = useRef<HTMLSpanElement>(null);
 
   // Runs whenever isInView, shouldReduceMotion, or the target number
   // changes. Once the element is in view, it either jumps straight to
   // the final number (if reduced motion is requested) or smoothly
-  // animates `display` from 0 up to `target` over 1.6 seconds, updating
-  // the on-screen number on every animation frame via onUpdate.
+  // animates from 0 up to `target` over 1.6 seconds.
   useEffect(() => {
-    if (!isInView) return;
+    const node = numberRef.current;
+    if (!node || !isInView) return;
+
     if (shouldReduceMotion) {
-      setDisplay(target);
+      node.textContent = target.toFixed(decimals);
       return;
     }
+
     const controls = animate(0, target, {
       duration: 1.6,
       ease: [0.16, 1, 0.3, 1],
-      onUpdate: (latest) => setDisplay(latest),
+      // Writing the new number straight onto the DOM node instead of
+      // routing it through React state. onUpdate fires roughly 60 times
+      // a second, and a setState per frame would re-render this whole
+      // component that many times — for a change that only ever affects
+      // one string of text. Three counters animating at once made that
+      // hundreds of avoidable renders per second.
+      onUpdate: (latest) => {
+        node.textContent = latest.toFixed(decimals);
+      },
     });
-    // If this component disappears mid-count (e.g. the page changes),
-    // stop the animation so it doesn't keep trying to update state that
-    // no longer exists on screen.
+
+    // If this component disappears mid-count, stop the animation so it
+    // doesn't keep writing to a node that's no longer on screen.
     return () => controls.stop();
-  }, [isInView, shouldReduceMotion, target]);
+  }, [isInView, shouldReduceMotion, target, decimals]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display.toFixed(decimals)}
+      {/* Starts at a zero padded to the same number of decimal places the
+          animation will use, so the very first frame is already the right
+          shape and the text doesn't visibly jump width as it starts. */}
+      <span ref={numberRef}>{(0).toFixed(decimals)}</span>
       {suffix}
     </span>
   );

@@ -10,14 +10,22 @@ import { useEffect, useState } from "react";
 export function useMediaQuery(query: string): boolean {
   // Reads the initial match synchronously (rather than starting false
   // and flipping after mount) so there's no visible flash of the wrong
-  // layout on first render.
-  const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
+  // layout on first render. The `typeof window` guard keeps this from
+  // throwing if the app is ever pre-rendered or server-rendered, where
+  // there is no window object to ask.
+  const [matches, setMatches] = useState(() =>
+    typeof window === "undefined" ? false : window.matchMedia(query).matches,
+  );
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(query);
-    // Sync in case the query string itself changed, or the environment
-    // shifted between the initial read above and this effect running.
-    setMatches(mediaQueryList.matches);
+
+    // Re-sync in case the query string changed, or the viewport shifted
+    // between the initial read above and this effect running. Comparing
+    // first means an unchanged value doesn't schedule a re-render — the
+    // previous version called setMatches unconditionally here, so every
+    // mount paid for an extra render pass it didn't need.
+    setMatches((prev) => (prev === mediaQueryList.matches ? prev : mediaQueryList.matches));
 
     function handleChange(event: MediaQueryListEvent) {
       setMatches(event.matches);

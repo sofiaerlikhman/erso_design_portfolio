@@ -84,9 +84,9 @@ export function Magnet({
     y.set(offsetY * strength);
   }
 
-  // When the cursor leaves the element, reset the offset back to zero —
-  // the spring then eases it smoothly back to its resting position.
-  function handlePointerLeave() {
+  // Returns the element to its resting position — the spring then eases
+  // it smoothly back rather than snapping.
+  function resetOffset() {
     x.set(0);
     y.set(0);
   }
@@ -95,7 +95,13 @@ export function Magnet({
     <motion.div
       ref={ref}
       onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
+      onPointerLeave={resetOffset}
+      // pointercancel fires when the browser takes the pointer away
+      // mid-interaction (a system gesture, a context menu, scrolling
+      // stealing the gesture). It does NOT guarantee a matching
+      // pointerleave, so without this the button would stay frozen at
+      // whatever offset it had reached when the pointer vanished.
+      onPointerCancel={resetOffset}
       // whileTap: while the element is actively being pressed/clicked,
       // shrink it slightly (tapScale) for a bit of tactile feedback.
       whileTap={{ scale: tapScale }}

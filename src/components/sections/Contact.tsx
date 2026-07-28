@@ -2,7 +2,7 @@
 // together" statement on one side, and a small card with quick-contact
 // options (résumé download, copy-to-clipboard email, the main CTA
 // button, and optionally social links) on the other.
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, Copy, FileDown } from "lucide-react";
 import { Badge } from "../ui/Badge";
 import { MagneticButton } from "../ui/MagneticButton";
@@ -27,13 +27,31 @@ export function Contact() {
   // address, then automatically flips back to false.
   const [copied, setCopied] = useState(false);
 
+  // Holds the pending "hide the confirmation again" timer so it can be
+  // cancelled — both when the visitor copies again before the previous
+  // one has expired, and when this section unmounts.
+  const resetTimer = useRef<number | null>(null);
+
+  // Cancel any timer still in flight if this component goes away, so it
+  // can't fire against a component that no longer exists.
+  useEffect(() => {
+    return () => {
+      if (resetTimer.current !== null) window.clearTimeout(resetTimer.current);
+    };
+  }, []);
+
   // Copies your email address to the visitor's clipboard when they
   // click the Email row, and briefly shows a confirmation message.
   async function handleCopyEmail() {
     try {
       await navigator.clipboard.writeText(meta.email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      // Clear the previous timer first. Without this, clicking twice in
+      // quick succession leaves the first timer running, and it would
+      // wipe the "Copied to clipboard" message early — well before the
+      // two seconds the second click was supposed to get.
+      if (resetTimer.current !== null) window.clearTimeout(resetTimer.current);
+      resetTimer.current = window.setTimeout(() => setCopied(false), 2000);
     } catch {
       // Clipboard API unavailable (e.g. insecure context) — the email is
       // still visible on the button for the user to copy manually.

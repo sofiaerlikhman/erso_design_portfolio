@@ -58,12 +58,21 @@ export function AnimatedText({ text, className, charClassName }: AnimatedTextPro
   // changes, not on every re-render — it's a plain JavaScript loop, not
   // a hook, so it's safe to skip re-running it most of the time.
   const words = useMemo(() => {
-    // How many non-space characters are in the whole paragraph — used
-    // to work out what fraction of the scroll range belongs to each
-    // individual letter.
-    const totalChars = text.replace(/\s/g, "").length || 1;
+    const wordList = text.split(" ");
+    // How many letters are actually going to be rendered — used to work
+    // out what fraction of the scroll range belongs to each one.
+    //
+    // This deliberately counts the split-up words rather than measuring
+    // the original string with a regex: the two disagree the moment the
+    // text contains any whitespace that isn't a plain space. A tab or a
+    // newline survives split(" ") and gets rendered as a character, but
+    // a /\s/ regex would have excluded it from the total — so the running
+    // count would overshoot, pushing the last letters' ranges past 1.0,
+    // where scroll progress can never reach them. Those letters would
+    // then stay permanently dim no matter how far you scrolled.
+    const totalChars = wordList.reduce((sum, word) => sum + word.length, 0) || 1;
     let seen = 0;
-    return text.split(" ").map((word) =>
+    return wordList.map((word) =>
       word.split("").map((char): WordToken => {
         const start = seen / totalChars;
         seen += 1;
