@@ -128,14 +128,16 @@
     );
   }
 
-  /* Applies the keyframes above — 22s for one full pass, matching the
-     duration the old Framer Motion version used, just now running as a
-     native CSS animation instead of a JS-driven one. */
+  /* Applies the keyframes above — 38s for one full pass. Slower than a
+     first pass at this (was 22s) reads as calmer without becoming
+     sluggish; still a plain CSS animation under the hood, so slowing it
+     down doesn't reintroduce the stutter the old JS-driven version had —
+     duration has no effect on how smooth it is. */
   .animate-marquee-right {
-    animation: marquee-loop-right 22s linear infinite;
+    animation: marquee-loop-right 38s linear infinite;
   }
   .animate-marquee-left {
-    animation: marquee-loop-left 22s linear infinite;
+    animation: marquee-loop-left 38s linear infinite;
   }
 
   .clamp-hero {

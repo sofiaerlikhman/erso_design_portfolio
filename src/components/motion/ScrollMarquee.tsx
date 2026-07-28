@@ -42,13 +42,13 @@ function MarqueeRow<T>({ items, direction, progress, disabled, autoLoop, renderI
   // cards might not add up to the full screen width.
   const tripled = useMemo(() => [...items, ...items, ...items], [items]);
 
-  // Scroll-linked range (desktop): the row only travels a sixth of the
+  // Scroll-linked range (desktop): the row only travels a tenth of the
   // tripled track over the full scroll range, which is what keeps the
   // sweep feeling slow and deliberate rather than racing past. Always
   // computed (hooks can't be called conditionally), even when autoLoop
   // means this particular value won't end up used.
   const scrollRange: [string, string] =
-    direction === "right" ? ["-16.6667%", "0%"] : ["0%", "-16.6667%"];
+    direction === "right" ? ["-10%", "0%"] : ["0%", "-10%"];
   const scrollX = useTransform(progress, [0, 1], disabled ? ["0%", "0%"] : scrollRange);
 
   const track = tripled.map((item, i) => (
