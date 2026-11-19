@@ -1,0 +1,23 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15191f"/>
+      <stop offset="100%" stop-color="#34332f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A94A0"/>
+      <stop offset="100%" stop-color="#E2ECF3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="230" r="150" fill="none" stroke="#E2ECF3" stroke-opacity="0.18" stroke-width="1"/>
+  <ellipse cx="400" cy="230" rx="150" ry="58" fill="none" stroke="#D9C4AA" stroke-opacity="0.16" stroke-width="1"/>
+  <ellipse cx="400" cy="230" rx="58" ry="150" fill="none" stroke="#D9C4AA" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="250" y1="230" x2="550" y2="230" stroke="#E2ECF3" stroke-opacity="0.14" stroke-width="1"/>
+  <path d="M250 300 Q 400 150 550 230" fill="none" stroke="url(#accent)" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle cx="250" cy="300" r="6" fill="#F6E4CF" opacity="0.8"/>
+  <circle cx="550" cy="230" r="6" fill="#F6E4CF" opacity="0.8"/>
+  <text x="48" y="500" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#F6E4CF" opacity="0.9">DuTACS GmbH</text>
+  <text x="48" y="534" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#D7E2EA" opacity="0.6">Rebranding — Cover</text>
+  <text x="48" y="566" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#D9C4AA" opacity="0.45" letter-spacing="2">PLACEHOLDER — REPLACE WITH ARTWORK</text>
+</svg>

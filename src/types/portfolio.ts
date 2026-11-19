@@ -118,6 +118,18 @@ export interface EducationItem {
   period: string;
 }
 
+// One show in the Exhibitions list, under Education in the resume
+// section. `kind` is the small label above the title ("Solo Exhibition",
+// "Group Show", …) and `description` is the one-line note underneath.
+export interface ExhibitionItem {
+  id: string;
+  title: string;
+  kind: string;
+  venue: string;
+  year: string;
+  description: string;
+}
+
 // One row in the Languages list (e.g. "English — Native").
 export interface LanguageItem {
   name: string;
@@ -153,6 +165,9 @@ export interface PortfolioData {
   about: AboutContent;
   experience: ExperienceItem[];
   education: EducationItem[];
+  /** Shown between Education and Soft Skills. An empty array hides the
+   *  whole block, so it's safe to leave as [] if there's nothing to list. */
+  exhibitions: ExhibitionItem[];
   softSkills: string[];
   languages: LanguageItem[];
   services: ServiceItem[];

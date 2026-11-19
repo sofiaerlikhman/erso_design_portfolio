@@ -5,6 +5,7 @@
 // right on desktop; stacked on mobile).
 import { AccordionItem } from "../ui/AccordionItem";
 import { EducationEntry } from "../ui/EducationEntry";
+import { ExhibitionEntry } from "../ui/ExhibitionEntry";
 import { Badge } from "../ui/Badge";
 import { SectionHeading } from "../common/SectionHeading";
 import { SectionEyebrow } from "../common/SectionEyebrow";
@@ -13,7 +14,8 @@ import { portfolioData } from "../../data/portfolioData";
 export function ServicesResume() {
   // Every piece of content this section needs, pulled straight out of
   // portfolioData.ts — see that file for what each array/object holds.
-  const { experience, education, softSkills, languages, services, resumeIntro } = portfolioData;
+  const { experience, education, exhibitions, softSkills, languages, services, resumeIntro } =
+    portfolioData;
 
   return (
     <section id="experience" className="bg-cream px-6 pb-24 text-text-dark sm:px-10">
@@ -50,6 +52,19 @@ export function ServicesResume() {
               ))}
             </div>
           </div>
+
+          {/* Exhibitions. Skipped entirely when the array is empty, so
+              the heading never shows up above nothing. */}
+          {exhibitions.length > 0 && (
+            <div className="mt-20">
+              <SectionEyebrow theme="dark">Exhibitions</SectionEyebrow>
+              <div className="mt-6">
+                {exhibitions.map((item) => (
+                  <ExhibitionEntry key={item.id} item={item} />
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Soft skills (a row of tag pills) and languages (a simple
               name + fluency-level list) side by side on wider screens. */}
