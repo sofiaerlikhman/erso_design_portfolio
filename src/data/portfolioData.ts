@@ -164,7 +164,7 @@ export const portfolioData: PortfolioData = {
       company: "Freelance & Pro Bono Work",
       period: "2022 — Present",
       description:
-        "Websites, digital catalogues, print campaigns, and social media work for independent clients and non-profits.",
+        "Designing digital products and print campaigns for independent clients and non-profits, specializing in web design, editorial layouts, and social media production.",
       skills: [
         "Web Design",
         "Digital Catalogues",
@@ -183,7 +183,7 @@ export const portfolioData: PortfolioData = {
       company: "Five Bays Resort",
       period: "2025 — 2026",
       description:
-        "Ran brand and content for a luxury resort: the website, AI-generated media, gift packaging, and the launch event.",
+        "Directed brand development and content production for a luxury resort venture, overseeing everything from website design and AI-generated media to launch event planning and custom packaging.",
       skills: [
         "Brand Identity",
         "Web Design",
@@ -203,7 +203,7 @@ export const portfolioData: PortfolioData = {
       company: "DuTACS GmbH",
       period: "2023 — 2026",
       description:
-        "Rebranded the company, then designed its new website, print advertising, and digital content.",
+        "Spearheaded a complete brand overhaul, designing a responsive web platform, managing print marketing campaigns, and producing multi-format digital content.",
       skills: [
         "Rebranding",
         "Web Design",
@@ -276,7 +276,7 @@ export const portfolioData: PortfolioData = {
       venue: "Wiesbaden",
       year: "2025",
       description:
-        "Ukrainian vyshyvanka ornaments reinterpreted as contemporary design. Covered by three regional newspapers.",
+        "Ukrainian vyshyvanka ornaments reinterpreted as contemporary design. Three regional newspapers covered the show.",
     },
   ],
 
@@ -339,7 +339,7 @@ export const portfolioData: PortfolioData = {
     eyebrow: "Resume & Credentials",
     heading: "Experience, education, and core strengths.",
     description:
-      "The short version of my CV. The full PDF is the download button at the top of the page.",
+      "A summary of my recent roles, academic foundation, interpersonal skills, and spoken languages.",
   },
 
   // Read by: SelectedProjects (the heading above the project cards).
@@ -358,7 +358,7 @@ export const portfolioData: PortfolioData = {
       client: "Five Bays Resort, Silifke / Mersin, Türkiye",
       categoryTags: ["Brand System", "Web Design", "AI Media & Packaging"],
       description:
-        "Everything visual for a 180-suite resort on five bays of the Turkish coast: corporate website, brochures and catalogues, a social media concept, AI photography and video, gift packaging, and the launch event. All of it in Turkish, English, and German.",
+        "The entire visual presence for a 180-suite luxury resort spread across five natural bays on the Turkish coast — corporate website, brochures and catalogues, a social media concept, AI-generated photography and video, gift packaging, and the launch event, all delivered in Turkish, English, and German.",
       liveUrl: "https://fivebaysresort.com/",
       images: [fiveBaysCover, fiveBaysPrint, fiveBaysMedia],
     },
@@ -368,7 +368,7 @@ export const portfolioData: PortfolioData = {
       client: "Children of the Sun, Kharkiv",
       categoryTags: ["Brand Identity", "Print", "Gift Packaging"],
       description:
-        "Pro bono visual identity and event branding for a charity marathon: custom typography, gift packaging, participant certificates, and print promotion.",
+        "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, gift packaging, participant certificates, and promotional print media.",
       images: [detiSolntsaPoster, detiSolntsaPackaging, detiSolntsaCertificate],
     },
     {
@@ -377,7 +377,7 @@ export const portfolioData: PortfolioData = {
       client: "DOBROVA",
       categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
       description:
-        "A digital brochure for an art couture exhibition, built around runway photography, the artist's milestones, and the gallery pieces, and laid out to read on any screen.",
+        "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
       images: [dobrovaMultiDevice, dobrovaMobileMockup, dobrovaDesktopMockup],
     },
     {
@@ -386,7 +386,7 @@ export const portfolioData: PortfolioData = {
       client: "DuTACS GmbH",
       categoryTags: ["Rebranding", "Corporate Website", "Print Advertising"],
       description:
-        "A rebrand for an IATA-certified German corporate travel company: new visual identity, a responsive website, print advertising, and digital content. The dutacs.de you see online today is a later redesign by another team.",
+        "A full brand overhaul for an IATA-certified German corporate travel management company — a new visual identity carried across a responsive corporate website, print advertising campaigns, and multi-format digital content.",
       images: [dutacsCover, dutacsWebsite, dutacsPrint],
     },
     {
@@ -395,7 +395,7 @@ export const portfolioData: PortfolioData = {
       client: "MainKreativRaum, Frankfurt",
       categoryTags: ["Web Design", "E-Commerce", "UI/UX"],
       description:
-        "Website and shop for a Frankfurt studio that runs painting, drawing, and ceramics workshops. A bookable course catalogue with per-workshop prices and gift vouchers, plus a separate enquiry form for team events and private celebrations.",
+        "Website and e-commerce design for a Frankfurt creative studio running painting, drawing, and ceramics workshops — a bookable course catalogue with per-workshop pricing, gift vouchers, and a separate enquiry flow for team events, private celebrations, and seasonal formats.",
       liveUrl: "https://mainkreativraum.de/",
       images: [mainKreativRaumCover, mainKreativRaumBooking, mainKreativRaumPages],
     },
@@ -405,7 +405,7 @@ export const portfolioData: PortfolioData = {
       client: "City of Wiesbaden",
       categoryTags: ["UX Architecture", "Web Platform", "Design System"],
       description:
-        "Information architecture, site map, and responsive web design for a city guide and event platform. Visitors filter events, browse recommended spots, and find student discounts.",
+        "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
       images: [mateChampagnerLaptop, mateChampagnerMockup, mateChampagnerUserFlow],
     },
     {
@@ -414,7 +414,7 @@ export const portfolioData: PortfolioData = {
       client: "Concept Project",
       categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
       description:
-        "A brand identity concept for a pet food line: custom typography, geometric multi-purpose packaging, a social media grid, and merchandise.",
+        "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
       images: [zooniamSocial, zooniamPackaging, zooniamTotes],
     },
     {
@@ -423,7 +423,7 @@ export const portfolioData: PortfolioData = {
       client: "Concept Project",
       categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
       description:
-        "A mobile app concept for Ukrainian art history, with indoor museum navigation, an audio guide, artwork browsing by movement, and digital tickets.",
+        "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
       images: [museumAppInHand, museumAppShowcase, museumWireframes],
     },
   ],
