@@ -146,7 +146,7 @@ export const portfolioData: PortfolioData = {
     paragraphs: [
       "I am a graphic and web designer working across brand identity, user interfaces, print, packaging, and AI-generated media. Whatever the medium, I make sure a brand still looks like itself, on a business card as much as on a full website.",
       "My background in machine learning and AI lets me combine structural logic with design intuition. That helps me turn complex ideas into websites that work, physical products and visual content people actually look at.",
-      "Design is more than just making things look good. It is about how smart systems, quality content, and visual craft come together to create meaningful experiences.",
+      "Looking good is the easy half. The rest is a system that still works once someone else picks it up: templates, production files, and rules a brand can keep using without me.",
     ],
       stats: [
       { label: "Years of Experience", value: "3+" },
@@ -164,7 +164,7 @@ export const portfolioData: PortfolioData = {
       company: "Freelance & Pro Bono Work",
       period: "2022 — Present",
       description:
-        "Designing digital products and print campaigns for independent clients and non-profits, specializing in web design, editorial layouts, and social media production.",
+        "Websites, digital catalogues, print campaigns, and social media work for independent clients and non-profits.",
       skills: [
         "Web Design",
         "Digital Catalogues",
@@ -172,9 +172,9 @@ export const portfolioData: PortfolioData = {
         "Social Content",
       ],
       wins: [
-        "Designed custom websites and interactive digital catalogues tailored to specific client goals",
-        "Delivered pro bono brand identities and print campaigns for community-driven initiatives",
-        "Developed cohesive social media templates and visual content libraries for diverse audiences",
+        "Built custom websites and interactive digital catalogues",
+        "Made brand identities and print campaigns pro bono for community projects",
+        "Set up social media templates and content libraries clients keep posting with",
       ],
     },
     {
@@ -183,7 +183,7 @@ export const portfolioData: PortfolioData = {
       company: "Five Bays Resort",
       period: "2025 — 2026",
       description:
-        "Directed brand development and content production for a luxury resort venture, overseeing everything from website design and AI-generated media to launch event planning and custom packaging.",
+        "Ran brand and content for a luxury resort: the website, AI-generated media, gift packaging, and the launch event.",
       skills: [
         "Brand Identity",
         "Web Design",
@@ -192,9 +192,9 @@ export const portfolioData: PortfolioData = {
         "Event Design",
       ],
       wins: [
-        "Produced AI-driven promo videos and visual assets for digital marketing campaigns",
+        "Produced AI-generated promo videos and visuals for the marketing campaigns",
         "Designed the corporate website, promotional brochures, and physical gift bags",
-        "Co-organized and executed the visual design strategy for the resort launch event",
+        "Co-organized the resort launch event and designed how it looked",
       ],
     },
     {
@@ -203,7 +203,7 @@ export const portfolioData: PortfolioData = {
       company: "DuTACS GmbH",
       period: "2023 — 2026",
       description:
-        "Spearheaded a complete brand overhaul, designing a responsive web platform, managing print marketing campaigns, and producing multi-format digital content.",
+        "Rebranded the company, then designed its new website, print advertising, and digital content.",
       skills: [
         "Rebranding",
         "Web Design",
@@ -212,9 +212,9 @@ export const portfolioData: PortfolioData = {
         "Graphic Design",
       ],
       wins: [
-        "Executed a comprehensive company rebranding across digital and physical mediums",
-        "Designed and launched a modern, responsive corporate website",
-        "Produced all print advertising collateral and multimedia content pipelines",
+        "Rebranded the company across print and digital",
+        "Designed and launched a responsive corporate website",
+        "Produced every piece of print advertising and the digital content around it",
       ],
     },
     {
@@ -223,7 +223,7 @@ export const portfolioData: PortfolioData = {
       company: "Children of the Sun, charitable organisation, Kharkiv",
       period: "2020 — 2022",
       description:
-        "Delivered pro bono visual design and social media management for a regional non-profit supporting children with chromosomal conditions and their families in Kharkiv.",
+        "Pro bono visual design and social media for a Kharkiv non-profit that supports children with chromosomal conditions and their families.",
       skills: [
         "Brand & Visual Design",
         "Social Media Strategy",
@@ -232,9 +232,9 @@ export const portfolioData: PortfolioData = {
         "Community Outreach",
       ],
       wins: [
-        "Developed cohesive social media visual identity and graphic templates to increase community awareness",
-        "Created print educational materials, brochures, and campaign assets for fundraising initiatives",
-        "Managed social channels to grow digital engagement and strengthen family support networks",
+        "Gave the charity a social media look and templates its volunteers could reuse",
+        "Made print education materials, brochures, and fundraising campaign assets",
+        "Ran the charity's social channels and its day-to-day posts",
       ],
     },
   ],
@@ -339,7 +339,7 @@ export const portfolioData: PortfolioData = {
     eyebrow: "Resume & Credentials",
     heading: "Experience, education, and core strengths.",
     description:
-      "A summary of my recent roles, academic foundation, interpersonal skills, and spoken languages.",
+      "The short version of my CV. The full PDF is the download button at the top of the page.",
   },
 
   // Read by: SelectedProjects (the heading above the project cards).
@@ -358,7 +358,7 @@ export const portfolioData: PortfolioData = {
       client: "Five Bays Resort, Silifke / Mersin, Türkiye",
       categoryTags: ["Brand System", "Web Design", "AI Media & Packaging"],
       description:
-        "The entire visual presence for a 180-suite luxury resort spread across five natural bays on the Turkish coast — corporate website, brochures and catalogues, a social media concept, AI-generated photography and video, gift packaging, and the launch event, all delivered in Turkish, English, and German.",
+        "Everything visual for a 180-suite resort on five bays of the Turkish coast: corporate website, brochures and catalogues, a social media concept, AI photography and video, gift packaging, and the launch event. All of it in Turkish, English, and German.",
       liveUrl: "https://fivebaysresort.com/",
       images: [fiveBaysCover, fiveBaysPrint, fiveBaysMedia],
     },
@@ -368,7 +368,7 @@ export const portfolioData: PortfolioData = {
       client: "Children of the Sun, Kharkiv",
       categoryTags: ["Brand Identity", "Print", "Gift Packaging"],
       description:
-        "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, gift packaging, participant certificates, and promotional print media.",
+        "Pro bono visual identity and event branding for a charity marathon: custom typography, gift packaging, participant certificates, and print promotion.",
       images: [detiSolntsaPoster, detiSolntsaPackaging, detiSolntsaCertificate],
     },
     {
@@ -377,7 +377,7 @@ export const portfolioData: PortfolioData = {
       client: "DOBROVA",
       categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
       description:
-        "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
+        "A digital brochure for an art couture exhibition, built around runway photography, the artist's milestones, and the gallery pieces, and laid out to read on any screen.",
       images: [dobrovaMultiDevice, dobrovaMobileMockup, dobrovaDesktopMockup],
     },
     {
@@ -386,7 +386,7 @@ export const portfolioData: PortfolioData = {
       client: "DuTACS GmbH",
       categoryTags: ["Rebranding", "Corporate Website", "Print Advertising"],
       description:
-        "A full brand overhaul for an IATA-certified German corporate travel management company — a new visual identity carried across a responsive corporate website, print advertising campaigns, and multi-format digital content. The version of dutacs.de online today is a later redesign by another team.",
+        "A rebrand for an IATA-certified German corporate travel company: new visual identity, a responsive website, print advertising, and digital content. The dutacs.de you see online today is a later redesign by another team.",
       images: [dutacsCover, dutacsWebsite, dutacsPrint],
     },
     {
@@ -395,7 +395,7 @@ export const portfolioData: PortfolioData = {
       client: "MainKreativRaum, Frankfurt",
       categoryTags: ["Web Design", "E-Commerce", "UI/UX"],
       description:
-        "Website and e-commerce design for a Frankfurt creative studio running painting, drawing, and ceramics workshops — a bookable course catalogue with per-workshop pricing, gift vouchers, and a separate enquiry flow for team events, private celebrations, and seasonal formats.",
+        "Website and shop for a Frankfurt studio that runs painting, drawing, and ceramics workshops. A bookable course catalogue with per-workshop prices and gift vouchers, plus a separate enquiry form for team events and private celebrations.",
       liveUrl: "https://mainkreativraum.de/",
       images: [mainKreativRaumCover, mainKreativRaumBooking, mainKreativRaumPages],
     },
@@ -405,7 +405,7 @@ export const portfolioData: PortfolioData = {
       client: "City of Wiesbaden",
       categoryTags: ["UX Architecture", "Web Platform", "Design System"],
       description:
-        "Information architecture, site mapping, and responsive web design for a local event and city guide platform featuring event filtering, curated spot recommendations, and student discounts.",
+        "Information architecture, site map, and responsive web design for a city guide and event platform. Visitors filter events, browse recommended spots, and find student discounts.",
       images: [mateChampagnerLaptop, mateChampagnerMockup, mateChampagnerUserFlow],
     },
     {
@@ -414,7 +414,7 @@ export const portfolioData: PortfolioData = {
       client: "Concept Project",
       categoryTags: ["Brand Identity", "Packaging Design", "Social Media"],
       description:
-        "An end-to-end brand identity concept for a modern pet food line featuring custom typography, geometric product multi-purpose packaging, social media grid design, and merchandise.",
+        "A brand identity concept for a pet food line: custom typography, geometric multi-purpose packaging, a social media grid, and merchandise.",
       images: [zooniamSocial, zooniamPackaging, zooniamTotes],
     },
     {
@@ -423,7 +423,7 @@ export const portfolioData: PortfolioData = {
       client: "Concept Project",
       categoryTags: ["Mobile App", "UI/UX Architecture", "Product Design"],
       description:
-        "An end-to-end mobile app concept for exploring Ukrainian art history featuring interactive indoor museum navigation, audio guide playback, artwork discovery across movements, and digital ticket management.",
+        "A mobile app concept for Ukrainian art history, with indoor museum navigation, an audio guide, artwork browsing by movement, and digital tickets.",
       images: [museumAppInHand, museumAppShowcase, museumWireframes],
     },
   ],
