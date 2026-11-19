@@ -368,7 +368,7 @@ export const portfolioData: PortfolioData = {
       client: "Children of the Sun, Kharkiv",
       categoryTags: ["Brand Identity", "Print", "Gift Packaging"],
       description:
-        "A Kharkiv charity for children with chromosomal conditions and their families, and the charity marathon that raised money for them.",
+        "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, packaging, socks merchandise, and promotional print media.",
       images: [detiSolntsaPoster, detiSolntsaPackaging, detiSolntsaCertificate],
     },
     {
@@ -377,7 +377,7 @@ export const portfolioData: PortfolioData = {
       client: "DOBROVA",
       categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
       description:
-        "An editorial digital brochure for an interactive art couture exhibition.",
+        "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
       images: [dobrovaMultiDevice, dobrovaMobileMockup, dobrovaDesktopMockup],
     },
     {
