@@ -358,7 +358,7 @@ export const portfolioData: PortfolioData = {
       client: "Five Bays Resort, Silifke / Mersin, Türkiye",
       categoryTags: ["Brand System", "Web Design", "AI Media & Packaging"],
       description:
-        "The entire visual presence for a 180-suite luxury resort spread across five natural bays on the Turkish coast — corporate website, brochures and catalogues, a social media concept, AI-generated photography and video, gift packaging, and the launch event, all delivered in Turkish, English, and German.",
+        "As lead designer, I was responsible for the resort's entire visual presence: website, brochures and catalogues, social media, AI-generated photo and video, gift packaging and the launch event.",
       liveUrl: "https://fivebaysresort.com/",
       images: [fiveBaysCover, fiveBaysPrint, fiveBaysMedia],
     },
@@ -368,7 +368,7 @@ export const portfolioData: PortfolioData = {
       client: "Children of the Sun, Kharkiv",
       categoryTags: ["Brand Identity", "Print", "Gift Packaging"],
       description:
-        "Complete pro bono visual identity and event branding for a charity marathon and non-profit featuring custom typography, gift packaging, participant certificates, and promotional print media.",
+        "A Kharkiv charity for children with chromosomal conditions and their families, and the charity marathon that raised money for them.",
       images: [detiSolntsaPoster, detiSolntsaPackaging, detiSolntsaCertificate],
     },
     {
@@ -377,7 +377,7 @@ export const portfolioData: PortfolioData = {
       client: "DOBROVA",
       categoryTags: ["Digital Brochure", "Editorial Web Design", "UI/UX"],
       description:
-        "An editorial digital brochure designed for an interactive art couture exhibition, blending high-fashion runway photography, artist milestones, and fine art galleries into a responsive digital experience.",
+        "An editorial digital brochure for an interactive art couture exhibition.",
       images: [dobrovaMultiDevice, dobrovaMobileMockup, dobrovaDesktopMockup],
     },
     {
