@@ -21,7 +21,7 @@ export function About() {
       id="about"
       className="relative -mt-10 rounded-t-4xl bg-cream px-6 pb-24 pt-20 text-text-dark sm:px-10 sm:pt-28"
     >
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <SectionEyebrow theme="dark">{about.heading}</SectionEyebrow>
 
         {lead && (
@@ -32,7 +32,7 @@ export function About() {
         )}
 
         {/* No max-width here on purpose — it shares the lead paragraph's
-            width (both are only constrained by the max-w-4xl wrapper
+            width (both are only constrained by the max-w-6xl wrapper
             above) instead of running narrower than it. */}
         {rest.map((paragraph) => (
           <p key={paragraph} className="mt-6 font-body text-base text-text-dark/70 sm:text-lg">
