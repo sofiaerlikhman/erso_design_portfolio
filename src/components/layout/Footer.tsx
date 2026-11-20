@@ -1,10 +1,12 @@
 // Footer.tsx: The small closing strip at the very bottom of the page —
-// the logo (which doubles as a "back to top" link), a second language
-// switcher for visitors who have read all the way down, and the
-// copyright line.
+// the logo (which doubles as a "back to top" link) and the copyright
+// line.
+//
+// No language switcher here on purpose: the one in the navbar is fixed
+// to the top of the screen and visible from anywhere on the page, so a
+// second copy down here would be redundant.
 import { useContent, useUi } from "../../i18n/LocaleContext";
 import { Logo } from "../ui/Logo";
-import { LocaleSwitcher } from "../ui/LocaleSwitcher";
 import { FOCUS_RING_DARK } from "../../lib/a11y";
 import { cn } from "../../lib/cn";
 
@@ -22,11 +24,6 @@ export function Footer() {
         >
           <Logo className="h-8 w-auto" />
         </a>
-
-        {/* Second language switcher. Someone who reaches the bottom of
-            the page shouldn't have to scroll all the way back up to the
-            navbar to change language. */}
-        <LocaleSwitcher />
 
         <p className="font-body text-xs text-text-light/40">
           © {new Date().getFullYear()} {meta.name}. {ui.chrome.rightsReserved}

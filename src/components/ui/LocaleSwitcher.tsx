@@ -1,7 +1,9 @@
 // LocaleSwitcher.tsx: The EN | DE control that switches the site's
-// language. Shown in the Navbar (always visible, including on phones —
-// it deliberately sits outside the hamburger menu so nobody has to open
-// a menu to find their own language) and again in the Footer.
+// language. It lives in the Navbar only — and there, outside the
+// hamburger menu, so that nobody has to open a menu in a language they
+// don't read in order to find their own. The navbar is fixed to the top
+// of the screen, so the control stays reachable from anywhere on the
+// page.
 //
 // It builds its own buttons from the LOCALES list in
 // src/content/index.ts, so adding a third language there makes a third
