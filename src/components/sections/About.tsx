@@ -5,11 +5,11 @@
 import { AnimatedText } from "../motion/AnimatedText";
 import { StatBlock } from "../ui/StatBlock";
 import { SectionEyebrow } from "../common/SectionEyebrow";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent } from "../../i18n/LocaleContext";
 
 export function About() {
   // about: everything for this section, straight from portfolioData.ts.
-  const { about } = portfolioData;
+  const { about } = useContent();
 
   // Splits the paragraphs array into the first paragraph (`lead`, which
   // gets the special animated letter-by-letter reveal) and every

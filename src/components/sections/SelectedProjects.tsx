@@ -5,12 +5,13 @@
 import { StickyStackCard } from "../motion/StickyStackCard";
 import { ProjectCard } from "../ui/ProjectCard";
 import { SectionHeading } from "../common/SectionHeading";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent } from "../../i18n/LocaleContext";
 
 export function SelectedProjects() {
   // projects: the list of case studies to display. workIntro: the small
-  // heading block shown above them. Both come from portfolioData.ts.
-  const { projects, workIntro } = portfolioData;
+  // heading block shown above them. Both come from the current
+  // language's content file (src/content/en.ts or de.ts).
+  const { projects, workIntro } = useContent();
 
   return (
     <section

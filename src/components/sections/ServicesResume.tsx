@@ -9,13 +9,16 @@ import { ExhibitionEntry } from "../ui/ExhibitionEntry";
 import { Badge } from "../ui/Badge";
 import { SectionHeading } from "../common/SectionHeading";
 import { SectionEyebrow } from "../common/SectionEyebrow";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent, useUi } from "../../i18n/LocaleContext";
 
 export function ServicesResume() {
-  // Every piece of content this section needs, pulled straight out of
-  // portfolioData.ts — see that file for what each array/object holds.
+  // Every piece of content this section needs, pulled out of the current
+  // language's content file (src/content/en.ts or de.ts) — see either one
+  // for what each array/object holds. `ui` holds the four small headings
+  // below, which are interface labels rather than portfolio content.
   const { experience, education, exhibitions, softSkills, languages, services, resumeIntro } =
-    portfolioData;
+    useContent();
+  const ui = useUi();
 
   return (
     <section id="experience" className="bg-cream px-6 pb-24 text-text-dark sm:px-10">
@@ -45,7 +48,7 @@ export function ServicesResume() {
 
           {/* Education list. */}
           <div className="mt-20">
-            <SectionEyebrow theme="dark">Education</SectionEyebrow>
+            <SectionEyebrow theme="dark">{ui.resume.education}</SectionEyebrow>
             <div className="mt-6">
               {education.map((item) => (
                 <EducationEntry key={item.id} item={item} />
@@ -57,7 +60,7 @@ export function ServicesResume() {
               the heading never shows up above nothing. */}
           {exhibitions.length > 0 && (
             <div className="mt-20">
-              <SectionEyebrow theme="dark">Exhibitions</SectionEyebrow>
+              <SectionEyebrow theme="dark">{ui.resume.exhibitions}</SectionEyebrow>
               <div className="mt-6">
                 {exhibitions.map((item) => (
                   <ExhibitionEntry key={item.id} item={item} />
@@ -70,7 +73,7 @@ export function ServicesResume() {
               name + fluency-level list) side by side on wider screens. */}
           <div className="mt-20 grid gap-10 sm:grid-cols-2">
             <div>
-              <SectionEyebrow theme="dark">Soft Skills</SectionEyebrow>
+              <SectionEyebrow theme="dark">{ui.resume.softSkills}</SectionEyebrow>
               <div className="mt-6 flex flex-wrap gap-2">
                 {softSkills.map((skill) => (
                   <Badge
@@ -85,7 +88,7 @@ export function ServicesResume() {
             </div>
 
             <div>
-              <SectionEyebrow theme="dark">Languages</SectionEyebrow>
+              <SectionEyebrow theme="dark">{ui.resume.languages}</SectionEyebrow>
               {/* <dl>/<dt>/<dd> is the standard HTML pattern for a list of
                   "term + its value" pairs — here, each language name paired
                   with its fluency level. Wrapping each pair in its own div

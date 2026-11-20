@@ -6,7 +6,7 @@
 import { useMemo } from "react";
 import { ScrollMarquee } from "../motion/ScrollMarquee";
 import { FallbackImage } from "../ui/FallbackImage";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent } from "../../i18n/LocaleContext";
 import type { MarqueeItem } from "../../types/portfolio";
 
 // One small preview card — a thumbnail image plus a label and tag.
@@ -29,11 +29,12 @@ function MarqueeCard({ item }: { item: MarqueeItem }) {
 }
 
 export function MarqueeStrip() {
-  // The list of preview cards — comes straight from portfolioData.ts's
-  // `marquee` array. portfolioData.marquee is a module-level constant,
-  // so this reference never changes between renders — safe to read
-  // directly, no useMemo needed for `items` itself.
-  const items = portfolioData.marquee;
+  // The list of preview cards — the current language's `marquee` array.
+  // Each language's content object is a module-level constant, so this
+  // reference only changes when the visitor switches language, never on
+  // an ordinary re-render — safe to read directly, no useMemo needed for
+  // `items` itself.
+  const items = useContent().marquee;
 
   // useMemo here keeps `rowTwo` as the *same array reference* across
   // re-renders (recomputing only if `items` itself ever changed), so

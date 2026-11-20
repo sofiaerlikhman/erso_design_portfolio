@@ -6,7 +6,7 @@ import type { AboutStat } from "../../types/portfolio";
 import { AnimatedCounter } from "../motion/AnimatedCounter";
 
 // Props here come straight from one entry in portfolioData.ts's
-// about.stats array (see src/data/portfolioData.ts).
+// about.stats array (see src/content/en.ts and src/content/de.ts).
 export function StatBlock({ label, value }: AboutStat) {
   return (
     <div className="border-t border-divider pt-4">

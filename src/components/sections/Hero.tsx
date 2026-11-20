@@ -10,7 +10,8 @@ import { MagneticButton } from "../ui/MagneticButton";
 import { FallbackImage } from "../ui/FallbackImage";
 import { AnimatedGradient } from "../motion/AnimatedGradient";
 import { SectionEyebrow } from "../common/SectionEyebrow";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent, useUi } from "../../i18n/LocaleContext";
+import { fmt } from "../../i18n/fmt";
 import { withBase } from "../../lib/withBase";
 
 // Fades the bottom ~22% of the portrait to transparent, so it dissolves
@@ -24,7 +25,8 @@ export function Hero() {
   // hero: the headline text/links for this section (see the
   // `hero:` block in portfolioData.ts). meta: general site info,
   // used here just for the availability status text.
-  const { hero, meta } = portfolioData;
+  const { hero, meta } = useContent();
+  const ui = useUi();
 
   return (
     <section
@@ -53,7 +55,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 z-[1] flex items-end justify-center md:justify-end md:pr-[6%] lg:pr-[9%]">
         <FallbackImage
           src={hero.heroImage}
-          alt={`Portrait of ${meta.name}`}
+          alt={fmt(ui.hero.portraitAlt, { name: meta.name })}
           loading="eager"
           // translate-x/y shift the image up and slightly right without
           // touching its own size (unlike padding on the flex container,
@@ -102,7 +104,7 @@ export function Hero() {
               {hero.ctaLabel}
             </MagneticButton>
             <MagneticButton href="#contact" variant="ghost">
-              Contact
+              {ui.hero.contactCta}
             </MagneticButton>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { SocialIcon } from "../../lib/socialIcon";
 import { withBase } from "../../lib/withBase";
 import { FOCUS_RING_DARK, TAP_SCALE } from "../../lib/a11y";
 import { cn } from "../../lib/cn";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent, useUi } from "../../i18n/LocaleContext";
 
 // Shared by the Resume and Email rows below — pulled out once so the two
 // rows can't quietly drift out of sync with each other over future edits.
@@ -20,7 +20,9 @@ const CARD_ROW_CLASS =
 export function Contact() {
   // contact: the heading/subheading/button text for this section.
   // meta: general site info (email, résumé link, socials, availability).
-  const { contact, meta } = portfolioData;
+  // ui: the quick-contact card's own labels.
+  const { contact, meta } = useContent();
+  const ui = useUi();
 
   // copied: true for a couple of seconds right after the visitor clicks
   // the email row, showing "Copied to clipboard" instead of the email
@@ -93,9 +95,11 @@ export function Contact() {
               >
                 <div>
                   <div className="font-body text-xs uppercase tracking-wide text-text-light/40">
-                    Resume
+                    {ui.contactCard.resumeLabel}
                   </div>
-                  <div className="mt-1 font-body text-sm text-text-light">Download PDF</div>
+                  <div className="mt-1 font-body text-sm text-text-light">
+                    {ui.contactCard.resumeAction}
+                  </div>
                 </div>
                 <FileDown size={18} className="shrink-0 text-text-light/50 transition-colors group-hover:text-text-light" />
               </a>
@@ -107,10 +111,10 @@ export function Contact() {
               >
                 <div className="min-w-0">
                   <div className="font-body text-xs uppercase tracking-wide text-text-light/40">
-                    Email
+                    {ui.contactCard.emailLabel}
                   </div>
                   <div className="mt-1 truncate font-body text-sm text-text-light">
-                    {copied ? "Copied to clipboard" : meta.email}
+                    {copied ? ui.contactCard.emailCopied : meta.email}
                   </div>
                 </div>
                 {/* Swaps to a checkmark icon for the couple of seconds

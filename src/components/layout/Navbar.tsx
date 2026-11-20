@@ -5,15 +5,19 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "../ui/Logo";
+import { LocaleSwitcher } from "../ui/LocaleSwitcher";
 import { FOCUS_RING_DARK, TAP_SCALE } from "../../lib/a11y";
 import { cn } from "../../lib/cn";
-import { portfolioData } from "../../data/portfolioData";
+import { useContent, useUi } from "../../i18n/LocaleContext";
 
 export function Navbar() {
   // The list of nav links ("Selected Work", "Experience", etc.) — read
   // from portfolioData.ts's meta.navLinks, so adding/renaming/removing a
   // nav link only requires editing that data file.
-  const navLinks = portfolioData.meta.navLinks;
+  // Nav labels come from whichever language the visitor is reading;
+  // `ui` holds the screen-reader labels for the two icon-only buttons.
+  const navLinks = useContent().meta.navLinks;
+  const ui = useUi();
 
   // isOpen: whether the mobile dropdown menu is currently showing
   // (true) or hidden (false). Only relevant on small screens — the
@@ -42,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-bg-dark/75 px-5 py-3 shadow-lg shadow-black/20 backdrop-blur-md">
           <a
             href="#top"
-            aria-label="Back to top"
+            aria-label={ui.chrome.backToTop}
             className={cn("rounded-full text-text-light", FOCUS_RING_DARK)}
           >
             <Logo className="h-6 w-auto sm:h-7" />
@@ -67,19 +71,27 @@ export function Navbar() {
 
           {/* The hamburger/close button — only visible below the "md"
               breakpoint (md:hidden), i.e. the opposite of the nav above. */}
-          <button
-            type="button"
-            onClick={() => setIsOpen((v) => !v)}
-            aria-expanded={isOpen}
-            aria-label="Toggle menu"
-            className={cn(
-              "flex h-11 w-11 items-center justify-center rounded-full text-text-light md:hidden",
-              FOCUS_RING_DARK,
-              TAP_SCALE,
-            )}
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Right-hand group: the language switcher, then the
+              hamburger. The switcher sits OUTSIDE the dropdown menu on
+              purpose — a visitor who needs German shouldn't have to
+              work out how to open an English menu to find it. */}
+          <div className="flex items-center gap-2">
+            <LocaleSwitcher />
+
+            <button
+              type="button"
+              onClick={() => setIsOpen((v) => !v)}
+              aria-expanded={isOpen}
+              aria-label={ui.chrome.toggleMenu}
+              className={cn(
+                "flex h-11 w-11 items-center justify-center rounded-full text-text-light md:hidden",
+                FOCUS_RING_DARK,
+                TAP_SCALE,
+              )}
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* AnimatePresence lets this dropdown panel play a fade/slide-out

@@ -14,6 +14,8 @@ import {
 } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FallbackImage } from "../ui/FallbackImage";
+import { useUi } from "../../i18n/LocaleContext";
+import { fmt } from "../../i18n/fmt";
 import { FOCUS_RING_DARK, TAP_SCALE } from "../../lib/a11y";
 import { cn } from "../../lib/cn";
 
@@ -80,6 +82,10 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
   const [[index, direction], setSlide] = useState<[number, number]>([0, 0]);
   const shouldReduceMotion = useReducedMotion();
 
+  // Read before the early return below — React requires every hook to
+  // run on every render, so it cannot sit after a conditional return.
+  const ui = useUi();
+
   // If a project somehow has no images at all, there's nothing to show.
   if (images.length === 0) return null;
 
@@ -140,7 +146,11 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
           >
             <FallbackImage
               src={images[index]}
-              alt={`${altBase} — preview ${index + 1} of ${images.length}`}
+              alt={fmt(ui.carousel.slideAlt, {
+                title: altBase,
+                n: index + 1,
+                total: images.length,
+              })}
               className="h-full w-full object-cover"
             />
           </motion.div>
@@ -153,7 +163,7 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
             <button
               type="button"
               onClick={() => goTo(index - 1)}
-              aria-label="Previous image"
+              aria-label={ui.carousel.previousImage}
               className={cn(
                 "absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-bg-dark/60 text-text-light backdrop-blur-sm transition-colors hover:bg-bg-dark/80",
                 FOCUS_RING_DARK,
@@ -165,7 +175,7 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
             <button
               type="button"
               onClick={() => goTo(index + 1)}
-              aria-label="Next image"
+              aria-label={ui.carousel.nextImage}
               className={cn(
                 "absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-bg-dark/60 text-text-light backdrop-blur-sm transition-colors hover:bg-bg-dark/80",
                 FOCUS_RING_DARK,
@@ -188,7 +198,7 @@ export function ImageCarousel({ images, altBase, className }: ImageCarouselProps
               key={i}
               type="button"
               onClick={() => goTo(i)}
-              aria-label={`Go to image ${i + 1}`}
+              aria-label={fmt(ui.carousel.goToImage, { n: i + 1 })}
               aria-current={i === index}
               className={cn(
                 "flex h-8 w-8 items-center justify-center rounded-full",

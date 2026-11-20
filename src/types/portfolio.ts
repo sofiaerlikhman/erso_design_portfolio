@@ -1,6 +1,7 @@
 // portfolio.ts: This file doesn't render anything on screen — it's the
 // "shape" (a TypeScript type dictionary) that every piece of content in
-// src/data/portfolioData.ts must match. Think of it as a form template:
+// src/content/en.ts and src/content/de.ts must match. Think of it as a
+// form template:
 // it defines which fields (name, title, description, etc.) are required
 // or optional for each kind of content block on the site, so that if
 // someone edits portfolioData.ts and forgets a field or misspells one,
@@ -156,7 +157,8 @@ export interface ContactContent {
 }
 
 // The master shape of the *entire* website's content. The one object in
-// portfolioData.ts (src/data/portfolioData.ts) must match this exactly —
+// the content files (src/content/en.ts, src/content/de.ts) must match
+// this exactly —
 // every field listed here must exist there, with the matching type.
 export interface PortfolioData {
   meta: SiteMeta;
@@ -175,4 +177,98 @@ export interface PortfolioData {
   resumeIntro: SectionIntro;
   projects: ProjectItem[];
   contact: ContactContent;
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+ * Localisation (i18n)
+ * ───────────────────────────────────────────────────────────────────────
+ * The site ships in English ("en", the default) and German ("de").
+ * See src/content/ for the two content files and src/i18n/ for the
+ * provider that picks between them.
+ */
+
+/** Every language the site is available in. English is always the default. */
+export type Locale = "en" | "de";
+
+/**
+ * The page <title> and <meta name="description"> for one locale. Applied
+ * at runtime by src/i18n/useDocumentMeta.ts — index.html keeps the
+ * English version as the fallback for crawlers that don't run JavaScript.
+ */
+export interface SeoMeta {
+  title: string;
+  description: string;
+}
+
+/**
+ * "UI chrome" strings — the words that belong to the interface rather
+ * than to your portfolio content: button labels, the screen-reader
+ * labels on icon-only buttons, image alt text, and the SEO meta above.
+ *
+ * Anything written as {name}, {n}, {total} or {title} is a placeholder
+ * that gets filled in at runtime (see src/i18n/fmt.ts). Keep those
+ * braces exactly as they are when translating — the text around them can
+ * change freely, but a renamed or deleted placeholder will show up
+ * literally on the page.
+ */
+export interface UiStrings {
+  seo: SeoMeta;
+
+  /** Navbar, footer, and logo — mostly invisible screen-reader labels. */
+  chrome: {
+    backToTop: string;
+    toggleMenu: string;
+    siteLogo: string;
+    /** Footer copyright line, after the year and name. */
+    rightsReserved: string;
+  };
+
+  /** The EN | DE switcher. All of these are screen-reader only. */
+  localeSwitcher: {
+    /** Labels the control as a whole, e.g. "Language". */
+    groupLabel: string;
+    /** Per-language button label, e.g. "Switch to German". */
+    switchTo: Record<Locale, string>;
+  };
+
+  hero: {
+    /** The second, outline button next to the résumé download. */
+    contactCta: string;
+    /** Alt text for the portrait. Placeholder: {name}. */
+    portraitAlt: string;
+  };
+
+  /** The four small headings in the résumé section. */
+  resume: {
+    education: string;
+    exhibitions: string;
+    softSkills: string;
+    languages: string;
+  };
+
+  /** The quick-contact card in the closing section. */
+  contactCard: {
+    resumeLabel: string;
+    resumeAction: string;
+    emailLabel: string;
+    /** Shown for two seconds after the visitor copies the address. */
+    emailCopied: string;
+  };
+
+  project: {
+    visitLiveSite: string;
+    readCaseStudy: string;
+    /** Desktop grid image alt. Placeholders: {title}, {n}. */
+    previewAlt: string;
+  };
+
+  /** The mobile/tablet image carousel inside a project card. */
+  carousel: {
+    previousImage: string;
+    nextImage: string;
+    /** Dot button label. Placeholder: {n}. */
+    goToImage: string;
+    /** Carousel image alt. Placeholders: {title}, {n}, {total}. */
+    slideAlt: string;
+  };
 }

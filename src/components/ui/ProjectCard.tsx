@@ -8,6 +8,8 @@ import type { ProjectItem } from "../../types/portfolio";
 import { Badge } from "./Badge";
 import { FallbackImage } from "./FallbackImage";
 import { ImageCarousel } from "../motion/ImageCarousel";
+import { useUi } from "../../i18n/LocaleContext";
+import { fmt } from "../../i18n/fmt";
 import { FOCUS_RING_DARK } from "../../lib/a11y";
 import { cn } from "../../lib/cn";
 
@@ -23,13 +25,15 @@ const EXTERNAL_LINK_CLASS = cn(
 );
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const ui = useUi();
+
   // Prefer linking to the live site if one was provided; only fall back
   // to the case study link when there's no live URL. Computed once here
   // instead of duplicating the whole <a> block per case.
   const externalLink = project.liveUrl
-    ? { href: project.liveUrl, label: "Visit live site" }
+    ? { href: project.liveUrl, label: ui.project.visitLiveSite }
     : project.caseStudyUrl
-      ? { href: project.caseStudyUrl, label: "Read case study" }
+      ? { href: project.caseStudyUrl, label: ui.project.readCaseStudy }
       : null;
 
   return (
@@ -86,7 +90,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             <FallbackImage
               src={image}
-              alt={`${project.title} — preview ${i + 1}`}
+              alt={fmt(ui.project.previewAlt, { title: project.title, n: i + 1 })}
               className="h-full w-full object-cover transition-transform duration-500 ease-editorial group-hover:scale-105"
             />
           </div>

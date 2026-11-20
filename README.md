@@ -1,9 +1,12 @@
 # Erso Design — Portfolio & CV
 
 A personal portfolio/CV site built with React, TypeScript, Vite, Tailwind
-CSS, and Framer Motion. All content — projects, bio, experience, links,
-images — lives in one file, [`src/data/portfolioData.ts`](src/data/portfolioData.ts),
-so you can update the live site without touching any component code.
+CSS, and Framer Motion. The site is bilingual: **English (default) and
+German**, switched with the `EN | DE` control in the navbar.
+
+All content — projects, bio, experience, links, images — lives in
+[`src/content/`](src/content/), one file per language, so you can update
+the live site without touching any component code.
 
 ## Stack
 
@@ -29,11 +32,33 @@ npm run build      # type-check + production build to dist/
 npm run preview    # preview the production build locally
 ```
 
-## Editing content — `src/data/portfolioData.ts`
+## Editing content — `src/content/`
 
-This is the only file you need to touch for day-to-day updates. It's fully
-typed (see [`src/types/portfolio.ts`](src/types/portfolio.ts)), so your
-editor will flag anything missing.
+These are the only files you need to touch for day-to-day updates:
+
+| File | What's in it |
+| --- | --- |
+| [`src/content/en.ts`](src/content/en.ts) | English text — bio, projects, jobs, stats |
+| [`src/content/de.ts`](src/content/de.ts) | the same, in German |
+| [`src/content/ui.en.ts`](src/content/ui.en.ts) | English button labels, alt text, page title & description |
+| [`src/content/ui.de.ts`](src/content/ui.de.ts) | the same, in German |
+| [`src/content/images.ts`](src/content/images.ts) | every image, shared by both languages |
+
+The examples below use `en.ts`; `de.ts` has exactly the same shape.
+
+**Both files are type-checked against each other.** If you add a field to
+one and forget the other, `npm run lint` fails and names the missing
+field, so the two languages can't silently drift apart. Run it after any
+content edit:
+
+```bash
+npm run lint
+```
+
+**Placeholders.** In the `ui.*.ts` files, `{name}`, `{n}`, `{total}` and
+`{title}` are filled in at runtime. Reword the text around them freely,
+but keep the braces exactly as written — a renamed placeholder shows up
+literally on the page.
 
 **Add a project** — append an object to the `projects` array:
 
@@ -58,24 +83,32 @@ hero).
 
 `education`, `softSkills`, and `languages` currently hold placeholder
 values (institution names, and 5 generic "Language 1"–"Language 5" slots) —
-replace those with your real details in `portfolioData.ts`; nothing else
+replace those with your real details in `en.ts` and `de.ts`; nothing else
 needs to change.
 
-**Adding images** — drop files into `src/assets/images/`, import them at
-the top of `portfolioData.ts` (Vite turns the import into a hashed URL
-automatically):
+**Adding images** — drop files into `src/assets/images/`, then import and
+export them in [`src/content/images.ts`](src/content/images.ts) (Vite turns
+the import into a hashed URL automatically):
 
 ```ts
 import myProjectCover from "../assets/images/my-project-cover.jpg";
+
+export const images = {
+  myProjectCover,
+  // ...the rest
+};
 ```
 
-then reference `myProjectCover` in that project's `images` array.
+then reference `images.myProjectCover` in that project's `images` array,
+in both `en.ts` and `de.ts`. Images are shared between languages, so each
+file only ever needs adding once.
 
 **Update your bio, stats, availability, resume link, or socials** — edit
-the `about`, `meta`, and `hero` objects in the same file.
+the `about`, `meta`, and `hero` objects in the same file (and its German
+twin).
 
 **Social icons** are hidden by default (`meta.socialsVisible: false` in
-`portfolioData.ts`) — the links themselves are still defined in
+both content files) — the links themselves are still defined in
 `meta.socials`, just not rendered in the Contact section. Flip that flag to
 `true` whenever you're ready to show them; no component changes needed.
 
@@ -125,18 +158,53 @@ src/
                   FallbackImage, Logo)
     layout/       Navbar and Footer (persistent across the whole page)
     sections/     The six page sections, assembled in App.tsx
+  content/
+    en.ts              ← English site content
+    de.ts              ← German site content
+    ui.en.ts / ui.de.ts  Button labels, alt text, SEO, per language
+    images.ts            All imagery, shared by both languages
+    index.ts             Locale registry (which languages exist)
+  i18n/
+    LocaleContext.tsx    Decides the language; useContent() / useUi()
+    useDocumentMeta.ts   <html lang>, title, description, hreflang
+    fmt.ts               Fills {placeholders} in UI strings
   data/
-    portfolioData.ts   ← all site content lives here
+    portfolioData.ts   Compatibility re-export of en.ts
   types/
-    portfolio.ts        TypeScript shape of portfolioData.ts
+    portfolio.ts        TypeScript shape of the content files
   lib/                   cn(), withBase(), a11y focus-ring/tap constants,
                           social icon lookup
   assets/images/         Placeholder project imagery (SVG) — swap freely
 ```
 
-Sections read exclusively from `portfolioData.ts` — there's no copy
-hardcoded in JSX, so translating, rebranding, or restructuring the content
-never requires touching a component.
+Sections read exclusively from the content files via `useContent()` —
+there's no copy hardcoded in JSX, so rebranding or restructuring the
+content never requires touching a component.
+
+## Languages
+
+English is the default and lives at the plain URL. German is `?lang=de`,
+which composes with the in-page anchors: `?lang=de#work`.
+
+A visitor's choice is remembered in their browser, so returning German
+visitors get German. Browser language is deliberately **not** detected —
+everyone starts in English unless they choose otherwise, or follow a
+`?lang=de` link.
+
+**Adding a third language** takes three steps and no component edits:
+
+1. Add its code to the `Locale` type in `src/types/portfolio.ts`
+2. Copy `en.ts` → e.g. `fr.ts` and `ui.en.ts` → `ui.fr.ts`, then translate
+3. Register both in `src/content/index.ts`
+
+The switcher builds its buttons from that registry, so a third button
+appears on its own.
+
+**A note on SEO.** The page title, description and `hreflang` links are
+set in the browser after the page loads. Google runs JavaScript and will
+index both languages, but a crawler that doesn't would only see the
+English text in `index.html`. Per-language HTML straight from the server
+would need a prerender step at build time.
 
 ## Deploying to GitHub Pages
 
