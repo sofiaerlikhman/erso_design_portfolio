@@ -81,7 +81,10 @@ export function Hero() {
         <h1 className="clamp-hero mt-6 font-display leading-[0.95] text-text-light">
           {/* Each line of the headline (e.g. "DESIGN &" and "DIRECTION")
               is its own array entry in portfolioData.ts, so it always
-              breaks onto a new line exactly where intended. */}
+              breaks onto a new line exactly where intended. That's also
+              why there's no text-balance here: the breaks are already
+              chosen by hand, so there is nothing left for the browser to
+              balance. */}
           {hero.titleLines.map((line) => (
             <span key={line} className="block">
               {line}

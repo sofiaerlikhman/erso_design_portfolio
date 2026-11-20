@@ -44,7 +44,7 @@ export function AccordionItem({ item, defaultOpen = false }: AccordionItemProps)
         )}
       >
         <div>
-          <div className="font-display text-2xl text-text-dark sm:text-3xl">{item.role}</div>
+          <div className="font-display text-2xl text-balance text-text-dark sm:text-3xl">{item.role}</div>
           <div className="mt-1 font-body text-sm text-text-dark/60">
             {item.company} — {item.period}
           </div>
@@ -72,7 +72,7 @@ export function AccordionItem({ item, defaultOpen = false }: AccordionItemProps)
       >
         <div className="overflow-hidden">
           <div className="max-w-2xl pt-4 font-body text-text-dark/80">
-            <p>{item.description}</p>
+            <p className="text-pretty">{item.description}</p>
 
             {item.skills.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ export function AccordionItem({ item, defaultOpen = false }: AccordionItemProps)
             )}
 
             {item.wins.length > 0 && (
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 space-y-2 text-pretty">
                 {item.wins.map((win) => (
                   <li key={win} className="flex gap-2 text-sm text-text-dark/70">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-text-dark/40" />

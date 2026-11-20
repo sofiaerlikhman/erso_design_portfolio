@@ -76,10 +76,10 @@ export function Contact() {
           {/* Left: the big statement + availability badge. */}
           <div>
             <Badge dot>{meta.availability}</Badge>
-            <h2 className="mt-8 font-display text-4xl leading-[0.95] text-text-light sm:text-6xl lg:text-7xl">
+            <h2 className="mt-8 font-display text-4xl leading-[0.95] text-balance text-text-light sm:text-6xl lg:text-7xl">
               {contact.heading}
             </h2>
-            <p className="mt-6 max-w-md font-body text-text-light/60">
+            <p className="mt-6 max-w-md text-pretty font-body text-text-light/60">
               {contact.subheading}
             </p>
           </div>

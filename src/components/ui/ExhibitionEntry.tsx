@@ -17,13 +17,13 @@ export function ExhibitionEntry({ item }: ExhibitionEntryProps) {
         {item.kind}
       </div>
       <div className="mt-2 flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline sm:gap-4">
-        <div className="font-display text-xl text-text-dark transition-transform duration-300 ease-editorial group-hover:translate-x-1.5 sm:text-2xl">
+        <div className="font-display text-xl text-balance text-text-dark transition-transform duration-300 ease-editorial group-hover:translate-x-1.5 sm:text-2xl">
           {item.title}
         </div>
         <div className="shrink-0 font-body text-sm text-text-dark/50">{item.year}</div>
       </div>
       <div className="mt-1 font-body text-sm text-text-dark/60">{item.venue}</div>
-      <p className="mt-3 max-w-xl font-body text-sm text-text-dark/70">{item.description}</p>
+      <p className="mt-3 max-w-xl text-pretty font-body text-sm text-text-dark/70">{item.description}</p>
     </div>
   );
 }

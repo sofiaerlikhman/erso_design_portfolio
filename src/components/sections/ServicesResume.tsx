@@ -118,8 +118,8 @@ export function ServicesResume() {
                 <span className="font-display text-5xl text-text-dark/20">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 font-display text-2xl">{service.title}</h3>
-                <p className="mt-3 font-body text-sm text-text-dark/70">
+                <h3 className="mt-4 font-display text-2xl text-balance">{service.title}</h3>
+                <p className="mt-3 text-pretty font-body text-sm text-text-dark/70">
                   {service.description}
                 </p>
               </div>

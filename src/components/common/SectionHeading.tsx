@@ -45,7 +45,7 @@ export function SectionHeading({
       */}
       <h2
         className={cn(
-          "mt-4 font-display",
+          "mt-4 font-display text-balance",
           theme === "dark" ? "text-text-dark" : "text-text-light",
           headingClassName,
         )}
@@ -55,7 +55,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-4 font-body text-sm",
+            "mt-4 font-body text-sm text-pretty",
             theme === "dark" ? "text-text-dark/60" : "text-text-light/60",
             descriptionClassName,
           )}

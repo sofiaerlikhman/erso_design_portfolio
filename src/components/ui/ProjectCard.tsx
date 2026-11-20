@@ -52,10 +52,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </Badge>
             ))}
           </div>
-          <h3 className="mt-4 font-display text-3xl text-text-light sm:text-5xl">
+          <h3 className="mt-4 font-display text-3xl text-balance text-text-light sm:text-5xl">
             {project.title}
           </h3>
-          <p className="mt-3 font-body text-sm text-text-light/70 sm:text-base">
+          <p className="mt-3 text-pretty font-body text-sm text-text-light/70 sm:text-base">
             {project.description}
           </p>
         </div>

@@ -24,6 +24,11 @@ export function About() {
       <div className="mx-auto max-w-6xl">
         <SectionEyebrow theme="dark">{about.heading}</SectionEyebrow>
 
+        {/* Deliberately NOT text-balance. Balancing evens out the line
+            lengths but never shrinks the container, so it would pull this
+            lead paragraph in from the right edge and make the section look
+            narrower than the blocks around it — the exact thing the
+            max-w-6xl wrapper above is there to avoid. */}
         {lead && (
           <AnimatedText
             text={lead}
@@ -35,7 +40,7 @@ export function About() {
             width (both are only constrained by the max-w-6xl wrapper
             above) instead of running narrower than it. */}
         {rest.map((paragraph) => (
-          <p key={paragraph} className="mt-6 font-body text-base text-text-dark/70 sm:text-lg">
+          <p key={paragraph} className="mt-6 text-pretty font-body text-base text-text-dark/70 sm:text-lg">
             {paragraph}
           </p>
         ))}
